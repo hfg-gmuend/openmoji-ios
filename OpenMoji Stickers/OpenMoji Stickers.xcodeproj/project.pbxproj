@@ -208,7 +208,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -257,7 +257,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -269,9 +269,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L3Z7G5A648;
+				DEVELOPMENT_TEAM = Y97ZZ4TZK7;
 				INFOPLIST_FILE = "OpenMoji Stickers StickerPackExtension/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Sam0711er.OpenMoji-Stickers.StickerPackExtension";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.hfg-gmuend.openmojistickers.StickerPackExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -283,9 +283,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L3Z7G5A648;
+				DEVELOPMENT_TEAM = Y97ZZ4TZK7;
 				INFOPLIST_FILE = "OpenMoji Stickers StickerPackExtension/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Sam0711er.OpenMoji-Stickers.StickerPackExtension";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.hfg-gmuend.openmojistickers.StickerPackExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -297,9 +297,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L3Z7G5A648;
+				DEVELOPMENT_TEAM = Y97ZZ4TZK7;
 				INFOPLIST_FILE = "OpenMoji Stickers/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Sam0711er.OpenMoji-Stickers";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.hfg-gmuend.openmojistickers";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -310,9 +311,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L3Z7G5A648;
+				DEVELOPMENT_TEAM = Y97ZZ4TZK7;
 				INFOPLIST_FILE = "OpenMoji Stickers/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Sam0711er.OpenMoji-Stickers";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.hfg-gmuend.openmojistickers";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
