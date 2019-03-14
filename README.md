@@ -1,3 +1,3 @@
 # OpenMoji iMessage Sticker Pack
 
-![logo]: (header.png)
+![image](header.png)
