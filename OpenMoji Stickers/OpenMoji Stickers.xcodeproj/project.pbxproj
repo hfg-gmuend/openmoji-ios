@@ -10,6 +10,11 @@
 		227386A9203E1FDC00157013 /* OpenMoji Stickers StickerPackExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 227386A8203E1FDC00157013 /* OpenMoji Stickers StickerPackExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		227386AD203E1FDC00157013 /* Stickers.xcstickers in Resources */ = {isa = PBXBuildFile; fileRef = 227386AC203E1FDC00157013 /* Stickers.xcstickers */; };
 		227386AE203E1FDC00157013 /* Stickers.xcstickers in Resources */ = {isa = PBXBuildFile; fileRef = 227386AC203E1FDC00157013 /* Stickers.xcstickers */; };
+		22B73CA82255FE850031D96F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B73CA72255FE850031D96F /* AppDelegate.swift */; };
+		22B73CAA2255FE850031D96F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B73CA92255FE850031D96F /* ViewController.swift */; };
+		22B73CAD2255FE850031D96F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B73CAB2255FE850031D96F /* Main.storyboard */; };
+		22B73CAF2255FE870031D96F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22B73CAE2255FE870031D96F /* Assets.xcassets */; };
+		22B73CB22255FE870031D96F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B73CB02255FE870031D96F /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,13 +45,31 @@
 		227386A4203E1FDC00157013 /* OpenMoji Stickers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenMoji Stickers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		227386A8203E1FDC00157013 /* OpenMoji Stickers StickerPackExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "OpenMoji Stickers StickerPackExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		227386AC203E1FDC00157013 /* Stickers.xcstickers */ = {isa = PBXFileReference; lastKnownFileType = folder.stickers; name = Stickers.xcstickers; path = "OpenMoji Stickers StickerPackExtension/Stickers.xcstickers"; sourceTree = "<group>"; };
+		22B73CA52255FE850031D96F /* OpenMoji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenMoji.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		22B73CA72255FE850031D96F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		22B73CA92255FE850031D96F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		22B73CAC2255FE850031D96F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		22B73CAE2255FE870031D96F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		22B73CB12255FE870031D96F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		22B73CB32255FE870031D96F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		22B73CA22255FE850031D96F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		2273869D203E1FDC00157013 = {
 			isa = PBXGroup;
 			children = (
 				227386AC203E1FDC00157013 /* Stickers.xcstickers */,
+				22B73CA62255FE850031D96F /* OpenMoji */,
 				227386A5203E1FDC00157013 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,8 +79,22 @@
 			children = (
 				227386A4203E1FDC00157013 /* OpenMoji Stickers.app */,
 				227386A8203E1FDC00157013 /* OpenMoji Stickers StickerPackExtension.appex */,
+				22B73CA52255FE850031D96F /* OpenMoji.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		22B73CA62255FE850031D96F /* OpenMoji */ = {
+			isa = PBXGroup;
+			children = (
+				22B73CA72255FE850031D96F /* AppDelegate.swift */,
+				22B73CA92255FE850031D96F /* ViewController.swift */,
+				22B73CAB2255FE850031D96F /* Main.storyboard */,
+				22B73CAE2255FE870031D96F /* Assets.xcassets */,
+				22B73CB02255FE870031D96F /* LaunchScreen.storyboard */,
+				22B73CB32255FE870031D96F /* Info.plist */,
+			);
+			path = OpenMoji;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,12 +132,30 @@
 			productReference = 227386A8203E1FDC00157013 /* OpenMoji Stickers StickerPackExtension.appex */;
 			productType = "com.apple.product-type.app-extension.messages-sticker-pack";
 		};
+		22B73CA42255FE850031D96F /* OpenMoji */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22B73CB62255FE870031D96F /* Build configuration list for PBXNativeTarget "OpenMoji" */;
+			buildPhases = (
+				22B73CA12255FE850031D96F /* Sources */,
+				22B73CA22255FE850031D96F /* Frameworks */,
+				22B73CA32255FE850031D96F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenMoji;
+			productName = OpenMoji;
+			productReference = 22B73CA52255FE850031D96F /* OpenMoji.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		2273869E203E1FDC00157013 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = Sam0711er;
 				TargetAttributes = {
@@ -112,6 +167,10 @@
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
+					22B73CA42255FE850031D96F = {
+						CreatedOnToolsVersion = 10.2;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 227386A1203E1FDC00157013 /* Build configuration list for PBXProject "OpenMoji Stickers" */;
@@ -120,12 +179,14 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 2273869D203E1FDC00157013;
 			productRefGroup = 227386A5203E1FDC00157013 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				22B73CA42255FE850031D96F /* OpenMoji */,
 				227386A3203E1FDC00157013 /* OpenMoji Stickers */,
 				227386A7203E1FDC00157013 /* OpenMoji Stickers StickerPackExtension */,
 			);
@@ -149,7 +210,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		22B73CA32255FE850031D96F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22B73CB22255FE870031D96F /* LaunchScreen.storyboard in Resources */,
+				22B73CAF2255FE870031D96F /* Assets.xcassets in Resources */,
+				22B73CAD2255FE850031D96F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22B73CA12255FE850031D96F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22B73CAA2255FE850031D96F /* ViewController.swift in Sources */,
+				22B73CA82255FE850031D96F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		227386AB203E1FDC00157013 /* PBXTargetDependency */ = {
@@ -158,6 +241,25 @@
 			targetProxy = 227386AA203E1FDC00157013 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		22B73CAB2255FE850031D96F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22B73CAC2255FE850031D96F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		22B73CB02255FE870031D96F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22B73CB12255FE870031D96F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		227386AF203E1FDC00157013 /* Debug */ = {
@@ -324,6 +426,46 @@
 			};
 			name = Release;
 		};
+		22B73CB42255FE870031D96F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 588YB87VLP;
+				INFOPLIST_FILE = OpenMoji/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sam0711er.OpenMoji;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		22B73CB52255FE870031D96F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 588YB87VLP;
+				INFOPLIST_FILE = OpenMoji/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sam0711er.OpenMoji;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -350,6 +492,15 @@
 			buildConfigurations = (
 				227386B6203E1FDC00157013 /* Debug */,
 				227386B7203E1FDC00157013 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22B73CB62255FE870031D96F /* Build configuration list for PBXNativeTarget "OpenMoji" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22B73CB42255FE870031D96F /* Debug */,
+				22B73CB52255FE870031D96F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
