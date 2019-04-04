@@ -13,3 +13,5 @@
 .ipa
 *.ipa
 
+# Ignore Carthage folder files
+Carthage/

@@ -43,9 +43,9 @@
 		22B73CA72255FE850031D96F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22B73CA92255FE850031D96F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		22B73CAC2255FE850031D96F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		22B73CAE2255FE870031D96F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22B73CB12255FE870031D96F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22B73CB32255FE870031D96F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22B73D012256024F0031D96F /* StickersPickerCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickersPickerCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -72,8 +72,8 @@
 			children = (
 				22B73CA72255FE850031D96F /* AppDelegate.swift */,
 				22B73CA92255FE850031D96F /* ViewController.swift */,
+				22B73D012256024F0031D96F /* StickersPickerCollectionViewController.swift */,
 				22B73CAB2255FE850031D96F /* Main.storyboard */,
-				22B73CAE2255FE870031D96F /* Assets.xcassets */,
 				22B73CB02255FE870031D96F /* LaunchScreen.storyboard */,
 				22B73CB32255FE870031D96F /* Info.plist */,
 			);

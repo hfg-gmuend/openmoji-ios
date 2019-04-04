@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		225990E5225605EE00DE3338 /* StickersPickerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225990E4225605EE00DE3338 /* StickersPickerCollectionViewController.swift */; };
+		225990E9225608BA00DE3338 /* Sticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225990E8225608BA00DE3338 /* Sticker.swift */; };
+		225990EB225608CD00DE3338 /* openmoji.json in Resources */ = {isa = PBXBuildFile; fileRef = 225990EA225608CD00DE3338 /* openmoji.json */; };
+		225990EF22560B9700DE3338 /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225990EE22560B9700DE3338 /* Unbox.framework */; };
+		225990F122560ED200DE3338 /* StickersPickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225990F022560ED200DE3338 /* StickersPickerCollectionViewCell.swift */; };
 		22B73CE22256009A0031D96F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B73CE12256009A0031D96F /* AppDelegate.swift */; };
 		22B73CE42256009A0031D96F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B73CE32256009A0031D96F /* ViewController.swift */; };
 		22B73CE72256009A0031D96F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B73CE52256009A0031D96F /* Main.storyboard */; };
@@ -41,6 +46,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		225990E4225605EE00DE3338 /* StickersPickerCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickersPickerCollectionViewController.swift; sourceTree = "<group>"; };
+		225990E8225608BA00DE3338 /* Sticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sticker.swift; sourceTree = "<group>"; };
+		225990EA225608CD00DE3338 /* openmoji.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = openmoji.json; sourceTree = "<group>"; };
+		225990EE22560B9700DE3338 /* Unbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Unbox.framework; path = Carthage/Build/iOS/Unbox.framework; sourceTree = "<group>"; };
+		225990F022560ED200DE3338 /* StickersPickerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickersPickerCollectionViewCell.swift; sourceTree = "<group>"; };
 		22B73CDE2256009A0031D96F /* OpenMoji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenMoji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B73CE12256009A0031D96F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22B73CE32256009A0031D96F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,18 +68,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				225990EF22560B9700DE3338 /* Unbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		225990ED22560B9700DE3338 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				225990EE22560B9700DE3338 /* Unbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		22B73CD52256009A0031D96F = {
 			isa = PBXGroup;
 			children = (
 				22B73CE02256009A0031D96F /* OpenMoji */,
 				22B73CF6225600B50031D96F /* OpenMoji Stickers */,
 				22B73CDF2256009A0031D96F /* Products */,
+				225990ED22560B9700DE3338 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,6 +111,10 @@
 				22B73CE82256009C0031D96F /* Assets.xcassets */,
 				22B73CEA2256009C0031D96F /* LaunchScreen.storyboard */,
 				22B73CED2256009C0031D96F /* Info.plist */,
+				225990E4225605EE00DE3338 /* StickersPickerCollectionViewController.swift */,
+				225990E8225608BA00DE3338 /* Sticker.swift */,
+				225990EA225608CD00DE3338 /* openmoji.json */,
+				225990F022560ED200DE3338 /* StickersPickerCollectionViewCell.swift */,
 			);
 			path = OpenMoji;
 			sourceTree = "<group>";
@@ -115,6 +139,7 @@
 				22B73CDB2256009A0031D96F /* Frameworks */,
 				22B73CDC2256009A0031D96F /* Resources */,
 				22B73D00225600B60031D96F /* Embed App Extensions */,
+				225990EC2256098600DE3338 /* Carthage Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -185,6 +210,7 @@
 			files = (
 				22B73CEC2256009C0031D96F /* LaunchScreen.storyboard in Resources */,
 				22B73CE92256009C0031D96F /* Assets.xcassets in Resources */,
+				225990EB225608CD00DE3338 /* openmoji.json in Resources */,
 				22B73CE72256009A0031D96F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -199,12 +225,37 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		225990EC2256098600DE3338 /* Carthage Copy Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Unbox.framework",
+			);
+			name = "Carthage Copy Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		22B73CDA2256009A0031D96F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				225990E5225605EE00DE3338 /* StickersPickerCollectionViewController.swift in Sources */,
+				225990E9225608BA00DE3338 /* Sticker.swift in Sources */,
 				22B73CE42256009A0031D96F /* ViewController.swift in Sources */,
+				225990F122560ED200DE3338 /* StickersPickerCollectionViewCell.swift in Sources */,
 				22B73CE22256009A0031D96F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,6 +412,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 588YB87VLP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = OpenMoji/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -380,6 +435,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 588YB87VLP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = OpenMoji/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
