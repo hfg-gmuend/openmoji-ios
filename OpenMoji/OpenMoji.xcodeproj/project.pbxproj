@@ -1,0 +1,457 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22B73CE22256009A0031D96F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B73CE12256009A0031D96F /* AppDelegate.swift */; };
+		22B73CE42256009A0031D96F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B73CE32256009A0031D96F /* ViewController.swift */; };
+		22B73CE72256009A0031D96F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B73CE52256009A0031D96F /* Main.storyboard */; };
+		22B73CE92256009C0031D96F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22B73CE82256009C0031D96F /* Assets.xcassets */; };
+		22B73CEC2256009C0031D96F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B73CEA2256009C0031D96F /* LaunchScreen.storyboard */; };
+		22B73CF8225600B60031D96F /* Stickers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22B73CF7225600B60031D96F /* Stickers.xcassets */; };
+		22B73CFC225600B60031D96F /* OpenMoji Stickers.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 22B73CF5225600B40031D96F /* OpenMoji Stickers.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		22B73CFA225600B60031D96F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22B73CD62256009A0031D96F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22B73CF4225600B40031D96F;
+			remoteInfo = "OpenMoji Stickers";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		22B73D00225600B60031D96F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				22B73CFC225600B60031D96F /* OpenMoji Stickers.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		22B73CDE2256009A0031D96F /* OpenMoji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenMoji.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		22B73CE12256009A0031D96F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		22B73CE32256009A0031D96F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		22B73CE62256009A0031D96F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		22B73CE82256009C0031D96F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		22B73CEB2256009C0031D96F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		22B73CED2256009C0031D96F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22B73CF5225600B40031D96F /* OpenMoji Stickers.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "OpenMoji Stickers.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22B73CF7225600B60031D96F /* Stickers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Stickers.xcassets; sourceTree = "<group>"; };
+		22B73CF9225600B60031D96F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		22B73CDB2256009A0031D96F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22B73CD52256009A0031D96F = {
+			isa = PBXGroup;
+			children = (
+				22B73CE02256009A0031D96F /* OpenMoji */,
+				22B73CF6225600B50031D96F /* OpenMoji Stickers */,
+				22B73CDF2256009A0031D96F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		22B73CDF2256009A0031D96F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22B73CDE2256009A0031D96F /* OpenMoji.app */,
+				22B73CF5225600B40031D96F /* OpenMoji Stickers.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22B73CE02256009A0031D96F /* OpenMoji */ = {
+			isa = PBXGroup;
+			children = (
+				22B73CE12256009A0031D96F /* AppDelegate.swift */,
+				22B73CE32256009A0031D96F /* ViewController.swift */,
+				22B73CE52256009A0031D96F /* Main.storyboard */,
+				22B73CE82256009C0031D96F /* Assets.xcassets */,
+				22B73CEA2256009C0031D96F /* LaunchScreen.storyboard */,
+				22B73CED2256009C0031D96F /* Info.plist */,
+			);
+			path = OpenMoji;
+			sourceTree = "<group>";
+		};
+		22B73CF6225600B50031D96F /* OpenMoji Stickers */ = {
+			isa = PBXGroup;
+			children = (
+				22B73CF7225600B60031D96F /* Stickers.xcassets */,
+				22B73CF9225600B60031D96F /* Info.plist */,
+			);
+			path = "OpenMoji Stickers";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		22B73CDD2256009A0031D96F /* OpenMoji */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22B73CF02256009C0031D96F /* Build configuration list for PBXNativeTarget "OpenMoji" */;
+			buildPhases = (
+				22B73CDA2256009A0031D96F /* Sources */,
+				22B73CDB2256009A0031D96F /* Frameworks */,
+				22B73CDC2256009A0031D96F /* Resources */,
+				22B73D00225600B60031D96F /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22B73CFB225600B60031D96F /* PBXTargetDependency */,
+			);
+			name = OpenMoji;
+			productName = OpenMoji;
+			productReference = 22B73CDE2256009A0031D96F /* OpenMoji.app */;
+			productType = "com.apple.product-type.application";
+		};
+		22B73CF4225600B40031D96F /* OpenMoji Stickers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22B73CFD225600B60031D96F /* Build configuration list for PBXNativeTarget "OpenMoji Stickers" */;
+			buildPhases = (
+				22B73CF3225600B40031D96F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "OpenMoji Stickers";
+			productName = "OpenMoji Stickers";
+			productReference = 22B73CF5225600B40031D96F /* OpenMoji Stickers.appex */;
+			productType = "com.apple.product-type.app-extension.messages-sticker-pack";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		22B73CD62256009A0031D96F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = OpenMoji;
+				TargetAttributes = {
+					22B73CDD2256009A0031D96F = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					22B73CF4225600B40031D96F = {
+						CreatedOnToolsVersion = 10.2;
+					};
+				};
+			};
+			buildConfigurationList = 22B73CD92256009A0031D96F /* Build configuration list for PBXProject "OpenMoji" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 22B73CD52256009A0031D96F;
+			productRefGroup = 22B73CDF2256009A0031D96F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				22B73CDD2256009A0031D96F /* OpenMoji */,
+				22B73CF4225600B40031D96F /* OpenMoji Stickers */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		22B73CDC2256009A0031D96F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22B73CEC2256009C0031D96F /* LaunchScreen.storyboard in Resources */,
+				22B73CE92256009C0031D96F /* Assets.xcassets in Resources */,
+				22B73CE72256009A0031D96F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22B73CF3225600B40031D96F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22B73CF8225600B60031D96F /* Stickers.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22B73CDA2256009A0031D96F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22B73CE42256009A0031D96F /* ViewController.swift in Sources */,
+				22B73CE22256009A0031D96F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		22B73CFB225600B60031D96F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22B73CF4225600B40031D96F /* OpenMoji Stickers */;
+			targetProxy = 22B73CFA225600B60031D96F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		22B73CE52256009A0031D96F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22B73CE62256009A0031D96F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		22B73CEA2256009C0031D96F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22B73CEB2256009C0031D96F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		22B73CEE2256009C0031D96F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		22B73CEF2256009C0031D96F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		22B73CF12256009C0031D96F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 588YB87VLP;
+				INFOPLIST_FILE = OpenMoji/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.openmoji.openmoji-stickers-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		22B73CF22256009C0031D96F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 588YB87VLP;
+				INFOPLIST_FILE = OpenMoji/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.openmoji.openmoji-stickers-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		22B73CFE225600B60031D96F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 588YB87VLP;
+				INFOPLIST_FILE = "OpenMoji Stickers/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.openmoji.openmoji-stickers-ios.StickerPackExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		22B73CFF225600B60031D96F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 588YB87VLP;
+				INFOPLIST_FILE = "OpenMoji Stickers/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.openmoji.openmoji-stickers-ios.StickerPackExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		22B73CD92256009A0031D96F /* Build configuration list for PBXProject "OpenMoji" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22B73CEE2256009C0031D96F /* Debug */,
+				22B73CEF2256009C0031D96F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22B73CF02256009C0031D96F /* Build configuration list for PBXNativeTarget "OpenMoji" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22B73CF12256009C0031D96F /* Debug */,
+				22B73CF22256009C0031D96F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22B73CFD225600B60031D96F /* Build configuration list for PBXNativeTarget "OpenMoji Stickers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22B73CFE225600B60031D96F /* Debug */,
+				22B73CFF225600B60031D96F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 22B73CD62256009A0031D96F /* Project object */;
+}
