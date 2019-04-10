@@ -13,12 +13,12 @@
 		225990EF22560B9700DE3338 /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225990EE22560B9700DE3338 /* Unbox.framework */; };
 		225990F122560ED200DE3338 /* StickersPickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225990F022560ED200DE3338 /* StickersPickerCollectionViewCell.swift */; };
 		22B73CE22256009A0031D96F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B73CE12256009A0031D96F /* AppDelegate.swift */; };
-		22B73CE42256009A0031D96F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B73CE32256009A0031D96F /* ViewController.swift */; };
 		22B73CE72256009A0031D96F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B73CE52256009A0031D96F /* Main.storyboard */; };
 		22B73CE92256009C0031D96F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22B73CE82256009C0031D96F /* Assets.xcassets */; };
 		22B73CEC2256009C0031D96F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B73CEA2256009C0031D96F /* LaunchScreen.storyboard */; };
 		22B73CF8225600B60031D96F /* Stickers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22B73CF7225600B60031D96F /* Stickers.xcassets */; };
 		22B73CFC225600B60031D96F /* OpenMoji Stickers.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 22B73CF5225600B40031D96F /* OpenMoji Stickers.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		22B7C674225E6432004BCA6B /* SearchCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B7C673225E6432004BCA6B /* SearchCollectionReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +53,6 @@
 		225990F022560ED200DE3338 /* StickersPickerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickersPickerCollectionViewCell.swift; sourceTree = "<group>"; };
 		22B73CDE2256009A0031D96F /* OpenMoji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenMoji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B73CE12256009A0031D96F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		22B73CE32256009A0031D96F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		22B73CE62256009A0031D96F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22B73CE82256009C0031D96F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22B73CEB2256009C0031D96F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,6 +60,7 @@
 		22B73CF5225600B40031D96F /* OpenMoji Stickers.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "OpenMoji Stickers.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B73CF7225600B60031D96F /* Stickers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Stickers.xcassets; sourceTree = "<group>"; };
 		22B73CF9225600B60031D96F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22B7C673225E6432004BCA6B /* SearchCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				22B73CE12256009A0031D96F /* AppDelegate.swift */,
-				22B73CE32256009A0031D96F /* ViewController.swift */,
 				22B73CE52256009A0031D96F /* Main.storyboard */,
 				22B73CE82256009C0031D96F /* Assets.xcassets */,
 				22B73CEA2256009C0031D96F /* LaunchScreen.storyboard */,
@@ -115,6 +114,7 @@
 				225990E8225608BA00DE3338 /* Sticker.swift */,
 				225990EA225608CD00DE3338 /* openmoji.json */,
 				225990F022560ED200DE3338 /* StickersPickerCollectionViewCell.swift */,
+				22B7C673225E6432004BCA6B /* SearchCollectionReusableView.swift */,
 			);
 			path = OpenMoji;
 			sourceTree = "<group>";
@@ -254,7 +254,7 @@
 			files = (
 				225990E5225605EE00DE3338 /* StickersPickerCollectionViewController.swift in Sources */,
 				225990E9225608BA00DE3338 /* Sticker.swift in Sources */,
-				22B73CE42256009A0031D96F /* ViewController.swift in Sources */,
+				22B7C674225E6432004BCA6B /* SearchCollectionReusableView.swift in Sources */,
 				225990F122560ED200DE3338 /* StickersPickerCollectionViewCell.swift in Sources */,
 				22B73CE22256009A0031D96F /* AppDelegate.swift in Sources */,
 			);

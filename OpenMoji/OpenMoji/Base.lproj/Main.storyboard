@@ -6,29 +6,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="OpenMoji" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
-        <!--Stickers Picker Collection View Controller-->
+        <!--OpenMoji-->
         <scene sceneID="Xbk-Y8-Loa">
             <objects>
                 <collectionViewController id="k7m-P2-LrD" customClass="StickersPickerCollectionViewController" customModule="OpenMoji" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="yew-PP-AWY">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" id="yew-PP-AWY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -67,19 +52,16 @@
                             <outlet property="delegate" destination="k7m-P2-LrD" id="Fba-Ml-VWK"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="49w-oc-Tzc">
-                        <nil key="title"/>
-                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" id="dmw-A9-cP5">
-                            <rect key="frame" x="174" y="7" width="66.5" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                    <navigationItem key="navigationItem" title="OpenMoji" id="49w-oc-Tzc">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="KrB-zs-PlD">
                             <connections>
-                                <outlet property="delegate" destination="k7m-P2-LrD" id="Edu-tm-pVj"/>
+                                <action selector="searchButtonAction:" destination="k7m-P2-LrD" id="1eR-9e-e1k"/>
                             </connections>
-                        </textField>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchButton" destination="KrB-zs-PlD" id="BAg-a9-sIL"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bmb-SW-N0L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
