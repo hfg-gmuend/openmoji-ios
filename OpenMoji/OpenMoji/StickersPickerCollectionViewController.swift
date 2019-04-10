@@ -152,7 +152,7 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         print("textFieldDidEndEditing")
-        if filterText == nil || filterText.isEmpty || filterText == "" || filterText == " "{
+        if filterText.isEmpty || filterText == "" || filterText == " "{
             cancelSearch()
         }
     }
@@ -241,11 +241,22 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
             }
         }
         
+        cell.layer.cornerRadius = 10
+        
         return cell
 
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        UIView.animate(withDuration: 0.5) {
+            collectionView.cellForItem(at: indexPath)!.backgroundColor = UIColor.lightGray
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            UIView.animate(withDuration: 0.5) {
+                collectionView.cellForItem(at: indexPath)!.backgroundColor = UIColor.clear
+            }
+        }
         
         if isFiltering{
             if let hexcode = filteredArray()[indexPath.row].hexcode{
