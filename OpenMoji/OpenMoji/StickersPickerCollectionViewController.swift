@@ -60,6 +60,57 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
     }
     
     // MARK: - UI
+    func showCopiedView(imageName: String){
+        let copiedViewFrame = CGRect(x: 0, y: 0, width: 200, height: 200)
+        let copiedView = UIView(frame: copiedViewFrame)
+        copiedView.center = self.view.center
+        copiedView.backgroundColor = .clear
+        copiedView.alpha = 0
+        copiedView.layer.cornerRadius = 20
+        copiedView.clipsToBounds = true
+        
+        let copiedVisualEffectView = UIVisualEffectView(frame: copiedViewFrame)
+        copiedVisualEffectView.effect = UIBlurEffect(style: .prominent)
+        copiedVisualEffectView.layer.cornerRadius = 20
+        copiedVisualEffectView.clipsToBounds = true
+        copiedView.addSubview(copiedVisualEffectView)
+        
+        
+        let copiedImageViewFrame = CGRect(x: 0, y: 0, width: 150, height: 150)
+        let copiedImageView = UIImageView(frame: copiedImageViewFrame)
+        copiedImageView.image = UIImage(named: imageName)
+        copiedImageView.center = CGPoint(x: copiedView.bounds.width/2, y: copiedView.bounds.height/2-25)
+        
+        copiedView.addSubview(copiedImageView)
+        
+        
+        
+        let copiedLabelFrame = CGRect(x: 0, y: 0, width: 200, height: 20)
+        let copiedLabel = UILabel(frame: copiedLabelFrame)
+        copiedLabel.text = "Copied to clipboard!"
+        copiedLabel.textAlignment = .center
+        copiedLabel.textColor = .darkGray
+        copiedLabel.center = CGPoint(x: copiedView.bounds.width/2, y: copiedView.bounds.height-30)
+        
+        copiedView.addSubview(copiedLabel)
+        
+        self.view.addSubview(copiedView)
+        
+        UIView.animate(withDuration: 0.5) {
+            copiedView.alpha = 1
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            UIView.animate(withDuration: 0.5, animations: {
+                copiedView.alpha = 0
+            })
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                copiedView.removeFromSuperview()
+            }
+        }
+    }
+    
+    //MARK: - SEARCH
     var searchTextField = UITextField()
     @IBOutlet var searchButton: UIBarButtonItem!
     @IBAction func searchButtonAction(_ sender: Any) {
@@ -86,8 +137,7 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         isFiltering = false
         self.collectionView?.reloadData()
     }
-    
-    //MARK: - SEARCH
+
     @objc func textFieldDidChange(_ textField: UITextField) {
         if textField.text == nil || textField.text?.isEmpty ?? true || textField.text == "" || textField.text == " "{
             print("isFiltering will be set to false")
@@ -206,6 +256,7 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
                 if let stickerImage = UIImage(named: imageName){
                     UIPasteboard.general.image = stickerImage
                     print("Copied image")
+                    showCopiedView(imageName: imageName)
                 }
             }
         }else{
@@ -217,6 +268,7 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
                 if let stickerImage = UIImage(named: imageName){
                     UIPasteboard.general.image = stickerImage
                     print("Copied image")
+                    showCopiedView(imageName: imageName)
                 }
             }
         }
@@ -234,9 +286,6 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         return UICollectionReusableView()
         
     }
-    
-    
-   
 }
 
 extension StickersPickerCollectionViewController: UICollectionViewDelegateFlowLayout {
