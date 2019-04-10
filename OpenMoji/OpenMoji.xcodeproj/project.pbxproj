@@ -422,7 +422,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.openmoji.openmoji-stickers-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.openmoji.openmoji-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -445,7 +445,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.openmoji.openmoji-stickers-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.openmoji.openmoji-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -460,7 +460,7 @@
 				DEVELOPMENT_TEAM = 588YB87VLP;
 				INFOPLIST_FILE = "OpenMoji Stickers/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.openmoji.openmoji-stickers-ios.StickerPackExtension";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.openmoji.openmoji-ios.StickerPackExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -475,7 +475,7 @@
 				DEVELOPMENT_TEAM = 588YB87VLP;
 				INFOPLIST_FILE = "OpenMoji Stickers/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.openmoji.openmoji-stickers-ios.StickerPackExtension";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.openmoji.openmoji-ios.StickerPackExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
