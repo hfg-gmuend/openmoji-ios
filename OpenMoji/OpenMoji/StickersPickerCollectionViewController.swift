@@ -115,7 +115,8 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
     @IBOutlet var searchButton: UIBarButtonItem!
     @IBAction func searchButtonAction(_ sender: Any) {
         searchTextField.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
-        searchTextField.backgroundColor = .white
+        searchTextField.placeholder = "Search"
+        searchTextField.clearButtonMode = .always
         searchTextField.delegate = self
         searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
 
