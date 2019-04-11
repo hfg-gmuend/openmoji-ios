@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2223A473225F295700894D87 /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2223A472225F295700894D87 /* LegalViewController.swift */; };
+		2223A486225F2B8D00894D87 /* SwiftyStringScore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2223A485225F2B8D00894D87 /* SwiftyStringScore.framework */; };
 		225990E5225605EE00DE3338 /* StickersPickerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225990E4225605EE00DE3338 /* StickersPickerCollectionViewController.swift */; };
 		225990E9225608BA00DE3338 /* Sticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225990E8225608BA00DE3338 /* Sticker.swift */; };
 		225990EB225608CD00DE3338 /* openmoji.json in Resources */ = {isa = PBXBuildFile; fileRef = 225990EA225608CD00DE3338 /* openmoji.json */; };
@@ -18,7 +20,6 @@
 		22B73CEC2256009C0031D96F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B73CEA2256009C0031D96F /* LaunchScreen.storyboard */; };
 		22B73CF8225600B60031D96F /* Stickers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22B73CF7225600B60031D96F /* Stickers.xcassets */; };
 		22B73CFC225600B60031D96F /* OpenMoji Stickers.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 22B73CF5225600B40031D96F /* OpenMoji Stickers.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		22B7C674225E6432004BCA6B /* SearchCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B7C673225E6432004BCA6B /* SearchCollectionReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2223A472225F295700894D87 /* LegalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
+		2223A475225F2ACD00894D87 /* SourceSansPro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Light.ttf"; sourceTree = "<group>"; };
+		2223A476225F2ACD00894D87 /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
+		2223A477225F2ACE00894D87 /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
+		2223A478225F2ACF00894D87 /* SourceSansPro-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		2223A479225F2ACF00894D87 /* SourceSansPro-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-BoldItalic.ttf"; sourceTree = "<group>"; };
+		2223A47A225F2AD000894D87 /* SourceSansPro-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Black.ttf"; sourceTree = "<group>"; };
+		2223A47B225F2AD000894D87 /* SourceSansPro-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-LightItalic.ttf"; sourceTree = "<group>"; };
+		2223A47C225F2AD100894D87 /* SourceSansPro-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-ExtraLight.ttf"; sourceTree = "<group>"; };
+		2223A47D225F2AD200894D87 /* SourceSansPro-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		2223A47E225F2AD200894D87 /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
+		2223A47F225F2AD300894D87 /* SourceSansPro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Italic.ttf"; sourceTree = "<group>"; };
+		2223A480225F2AD400894D87 /* SourceSansPro-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-BlackItalic.ttf"; sourceTree = "<group>"; };
+		2223A485225F2B8D00894D87 /* SwiftyStringScore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyStringScore.framework; path = Carthage/Build/iOS/SwiftyStringScore.framework; sourceTree = "<group>"; };
 		225990E4225605EE00DE3338 /* StickersPickerCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickersPickerCollectionViewController.swift; sourceTree = "<group>"; };
 		225990E8225608BA00DE3338 /* Sticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sticker.swift; sourceTree = "<group>"; };
 		225990EA225608CD00DE3338 /* openmoji.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = openmoji.json; sourceTree = "<group>"; };
@@ -60,7 +75,6 @@
 		22B73CF5225600B40031D96F /* OpenMoji Stickers.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "OpenMoji Stickers.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B73CF7225600B60031D96F /* Stickers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Stickers.xcassets; sourceTree = "<group>"; };
 		22B73CF9225600B60031D96F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		22B7C673225E6432004BCA6B /* SearchCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2223A486225F2B8D00894D87 /* SwiftyStringScore.framework in Frameworks */,
 				225990EF22560B9700DE3338 /* Unbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,9 +90,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2223A474225F2AB800894D87 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2223A47A225F2AD000894D87 /* SourceSansPro-Black.ttf */,
+				2223A480225F2AD400894D87 /* SourceSansPro-BlackItalic.ttf */,
+				2223A476225F2ACD00894D87 /* SourceSansPro-Bold.ttf */,
+				2223A479225F2ACF00894D87 /* SourceSansPro-BoldItalic.ttf */,
+				2223A47C225F2AD100894D87 /* SourceSansPro-ExtraLight.ttf */,
+				2223A478225F2ACF00894D87 /* SourceSansPro-ExtraLightItalic.ttf */,
+				2223A47F225F2AD300894D87 /* SourceSansPro-Italic.ttf */,
+				2223A475225F2ACD00894D87 /* SourceSansPro-Light.ttf */,
+				2223A47B225F2AD000894D87 /* SourceSansPro-LightItalic.ttf */,
+				2223A47E225F2AD200894D87 /* SourceSansPro-Regular.ttf */,
+				2223A477225F2ACE00894D87 /* SourceSansPro-SemiBold.ttf */,
+				2223A47D225F2AD200894D87 /* SourceSansPro-SemiBoldItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		2223A481225F2ADC00894D87 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				2223A474225F2AB800894D87 /* Fonts */,
+				22B73CE12256009A0031D96F /* AppDelegate.swift */,
+				22B73CE52256009A0031D96F /* Main.storyboard */,
+				22B73CE82256009C0031D96F /* Assets.xcassets */,
+				22B73CEA2256009C0031D96F /* LaunchScreen.storyboard */,
+				22B73CED2256009C0031D96F /* Info.plist */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		2223A482225F2B0A00894D87 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				225990E4225605EE00DE3338 /* StickersPickerCollectionViewController.swift */,
+				2223A472225F295700894D87 /* LegalViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		2223A483225F2B2500894D87 /* Data & Model */ = {
+			isa = PBXGroup;
+			children = (
+				225990E8225608BA00DE3338 /* Sticker.swift */,
+				225990EA225608CD00DE3338 /* openmoji.json */,
+			);
+			path = "Data & Model";
+			sourceTree = "<group>";
+		};
+		2223A484225F2B3300894D87 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				225990F022560ED200DE3338 /* StickersPickerCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		225990ED22560B9700DE3338 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2223A485225F2B8D00894D87 /* SwiftyStringScore.framework */,
 				225990EE22560B9700DE3338 /* Unbox.framework */,
 			);
 			name = Frameworks;
@@ -105,16 +179,10 @@
 		22B73CE02256009A0031D96F /* OpenMoji */ = {
 			isa = PBXGroup;
 			children = (
-				22B73CE12256009A0031D96F /* AppDelegate.swift */,
-				22B73CE52256009A0031D96F /* Main.storyboard */,
-				22B73CE82256009C0031D96F /* Assets.xcassets */,
-				22B73CEA2256009C0031D96F /* LaunchScreen.storyboard */,
-				22B73CED2256009C0031D96F /* Info.plist */,
-				225990E4225605EE00DE3338 /* StickersPickerCollectionViewController.swift */,
-				225990E8225608BA00DE3338 /* Sticker.swift */,
-				225990EA225608CD00DE3338 /* openmoji.json */,
-				225990F022560ED200DE3338 /* StickersPickerCollectionViewCell.swift */,
-				22B7C673225E6432004BCA6B /* SearchCollectionReusableView.swift */,
+				2223A481225F2ADC00894D87 /* General */,
+				2223A482225F2B0A00894D87 /* View Controller */,
+				2223A484225F2B3300894D87 /* Cells */,
+				2223A483225F2B2500894D87 /* Data & Model */,
 			);
 			path = OpenMoji;
 			sourceTree = "<group>";
@@ -235,6 +303,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Unbox.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyStringScore.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputFileListPaths = (
@@ -254,8 +323,8 @@
 			files = (
 				225990E5225605EE00DE3338 /* StickersPickerCollectionViewController.swift in Sources */,
 				225990E9225608BA00DE3338 /* Sticker.swift in Sources */,
-				22B7C674225E6432004BCA6B /* SearchCollectionReusableView.swift in Sources */,
 				225990F122560ED200DE3338 /* StickersPickerCollectionViewCell.swift in Sources */,
+				2223A473225F295700894D87 /* LegalViewController.swift in Sources */,
 				22B73CE22256009A0031D96F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

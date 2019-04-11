@@ -174,7 +174,7 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
     
     func filteredArray() -> [Sticker]{
         if filterText != ""{
-            return stickersArray.filter{ $0.annotation!.contains(filterText) || $0.hexcode!.contains(filterText) || $0.emoji!.contains(filterText) || $0.group!.contains(filterText) || $0.subgroups!.contains(filterText) || $0.tags!.contains(filterText) }
+            return stickersArray.filter{ $0.annotation!.contains(filterText) || $0.hexcode!.contains(filterText) || $0.emoji!.contains(filterText) || $0.group!.contains(filterText) || $0.subgroups!.contains(filterText) || $0.tags!.contains(filterText) || $0.openmojiTags!.contains(filterText) }
         }else{
             return [Sticker]()
         }
