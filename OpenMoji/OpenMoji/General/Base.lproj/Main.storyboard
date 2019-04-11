@@ -71,6 +71,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="aboutBarButtonItem" destination="rWy-up-SF4" id="BCP-Cy-gA3"/>
                         <outlet property="searchButton" destination="KrB-zs-PlD" id="BAg-a9-sIL"/>
                     </connections>
                 </collectionViewController>

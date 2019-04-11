@@ -6,8 +6,10 @@
 //  Copyright © 2019 OpenMoji. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import Unbox
+import SwiftyStringScore
 
 class StickersPickerCollectionViewController: UICollectionViewController, UITextFieldDelegate {
 
@@ -34,7 +36,6 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         }
         
         getDataFromJSON { (successfullyParsed) in
-            
             if successfullyParsed{
                 self.collectionView.reloadData()
                 self.collectionView.isHidden = false
@@ -64,6 +65,7 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
     }
     
     // MARK: - UI
+    @IBOutlet var aboutBarButtonItem: UIBarButtonItem!
     func showCopiedView(imageName: String){
         let copiedViewFrame = CGRect(x: 0, y: 0, width: 200, height: 200)
         let copiedView = UIView(frame: copiedViewFrame)
@@ -123,15 +125,17 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         searchTextField.clearButtonMode = .always
         searchTextField.delegate = self
         searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        searchTextField.autocorrectionType = .no
 
         self.navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cancelSearch)), animated: true)
         self.navigationItem.titleView = self.searchTextField
-        
+        self.navigationItem.setLeftBarButton(nil, animated: true)
         
         searchTextField.becomeFirstResponder()
     }
     
     @objc func cancelSearch(){
+        self.navigationItem.setLeftBarButton(aboutBarButtonItem, animated: true)
         self.navigationItem.setRightBarButton(self.searchButton, animated: true)
         self.searchTextField.text = nil
         self.navigationItem.titleView = nil
@@ -178,7 +182,26 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
     
     func filteredArray() -> [Sticker]{
         if filterText != ""{
-            return stickersArray.filter{ $0.annotation!.contains(filterText) || $0.hexcode!.contains(filterText) || $0.emoji!.contains(filterText) || $0.group!.contains(filterText) || $0.subgroups!.contains(filterText) || $0.tags!.contains(filterText) || $0.openmojiTags!.contains(filterText) }
+            
+            /*let filteredArray = stickersArray.filter({ $0.annotation!.score(word: filterText) >= 0.8 })
+            
+            if filteredArray.count > 0{
+                return filteredArray
+            }else{
+                return [Sticker]()
+            }*/
+            
+            return stickersArray.filter({
+                $0.annotation!.contains(filterText.lowercased()) ||
+                $0.hexcode!.contains(filterText.lowercased()) ||
+                $0.emoji!.contains(filterText.lowercased()) ||
+                $0.group!.contains(filterText.lowercased()) ||
+                $0.subgroups!.contains(filterText.lowercased()) ||
+                $0.tags!.contains(filterText.lowercased()) ||
+                $0.openmojiTags!.contains(filterText.lowercased())
+            })
+            
+            //return stickersArray.filter{ $0.annotation!.contains(filterText) || $0.hexcode!.contains(filterText) || $0.emoji!.contains(filterText) || $0.group!.contains(filterText) || $0.subgroups!.contains(filterText) || $0.tags!.contains(filterText) || $0.openmojiTags!.contains(filterText) }
         }else{
             return [Sticker]()
         }
@@ -197,6 +220,7 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         // #warning Incomplete implementation, return the number of items
         if isFiltering{
             //print("filteredArray is \(filteredArray())")
+            print(filteredArray().count)
             return filteredArray().count
         }else{
             return stickersArray.count
