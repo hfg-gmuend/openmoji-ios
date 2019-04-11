@@ -56,7 +56,9 @@ class LegalViewController: UIViewController {
     // MARK: - UI
     @IBOutlet var websiteButton: UIButton!
     @IBAction func websiteButtonAction(_ sender: Any) {
-        
+        guard let url = URL(string: "http://openmoji.org") else {return}
+        let safariViewController = SFSafariViewController(url: url)
+        self.present(safariViewController, animated: true, completion: nil)
     }
     @IBOutlet var buttonView: UIView!
     var buttonArray = [UIButton]()
