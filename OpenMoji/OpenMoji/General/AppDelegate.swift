@@ -16,6 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if let sourceSansFont = UIFont(name: "SourceSansPro-Regular", size: UIFont.labelFontSize){
+            UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: sourceSansFont],for: .normal)
+            UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: sourceSansFont],for: .selected)
+            UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: sourceSansFont],for: .highlighted)
+            UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: sourceSansFont],for: .application)
+
+
+
+        }
+        
         return true
     }
 

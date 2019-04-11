@@ -14,6 +14,20 @@
 		225990EB225608CD00DE3338 /* openmoji.json in Resources */ = {isa = PBXBuildFile; fileRef = 225990EA225608CD00DE3338 /* openmoji.json */; };
 		225990EF22560B9700DE3338 /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225990EE22560B9700DE3338 /* Unbox.framework */; };
 		225990F122560ED200DE3338 /* StickersPickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225990F022560ED200DE3338 /* StickersPickerCollectionViewCell.swift */; };
+		22AF07E6225F2E25006873F3 /* SourceSansPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2223A47A225F2AD000894D87 /* SourceSansPro-Black.ttf */; };
+		22AF07E7225F2E25006873F3 /* SourceSansPro-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2223A480225F2AD400894D87 /* SourceSansPro-BlackItalic.ttf */; };
+		22AF07E8225F2E25006873F3 /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2223A476225F2ACD00894D87 /* SourceSansPro-Bold.ttf */; };
+		22AF07E9225F2E25006873F3 /* SourceSansPro-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2223A479225F2ACF00894D87 /* SourceSansPro-BoldItalic.ttf */; };
+		22AF07EA225F2E25006873F3 /* SourceSansPro-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2223A47C225F2AD100894D87 /* SourceSansPro-ExtraLight.ttf */; };
+		22AF07EB225F2E25006873F3 /* SourceSansPro-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2223A478225F2ACF00894D87 /* SourceSansPro-ExtraLightItalic.ttf */; };
+		22AF07EC225F2E25006873F3 /* SourceSansPro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2223A47F225F2AD300894D87 /* SourceSansPro-Italic.ttf */; };
+		22AF07ED225F2E25006873F3 /* SourceSansPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2223A475225F2ACD00894D87 /* SourceSansPro-Light.ttf */; };
+		22AF07EE225F2E25006873F3 /* SourceSansPro-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2223A47B225F2AD000894D87 /* SourceSansPro-LightItalic.ttf */; };
+		22AF07EF225F2E25006873F3 /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2223A47E225F2AD200894D87 /* SourceSansPro-Regular.ttf */; };
+		22AF07F0225F2E25006873F3 /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2223A477225F2ACE00894D87 /* SourceSansPro-SemiBold.ttf */; };
+		22AF07F1225F2E25006873F3 /* SourceSansPro-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2223A47D225F2AD200894D87 /* SourceSansPro-SemiBoldItalic.ttf */; };
+		22AF07F3225F34AA006873F3 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AF07F2225F34AA006873F3 /* CustomColors.swift */; };
+		22AF07F5225F47C6006873F3 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AF07F4225F47C6006873F3 /* SafariServices.framework */; };
 		22B73CE22256009A0031D96F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B73CE12256009A0031D96F /* AppDelegate.swift */; };
 		22B73CE72256009A0031D96F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B73CE52256009A0031D96F /* Main.storyboard */; };
 		22B73CE92256009C0031D96F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22B73CE82256009C0031D96F /* Assets.xcassets */; };
@@ -66,6 +80,8 @@
 		225990EA225608CD00DE3338 /* openmoji.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = openmoji.json; sourceTree = "<group>"; };
 		225990EE22560B9700DE3338 /* Unbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Unbox.framework; path = Carthage/Build/iOS/Unbox.framework; sourceTree = "<group>"; };
 		225990F022560ED200DE3338 /* StickersPickerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickersPickerCollectionViewCell.swift; sourceTree = "<group>"; };
+		22AF07F2225F34AA006873F3 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
+		22AF07F4225F47C6006873F3 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		22B73CDE2256009A0031D96F /* OpenMoji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenMoji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B73CE12256009A0031D96F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22B73CE62256009A0031D96F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -82,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22AF07F5225F47C6006873F3 /* SafariServices.framework in Frameworks */,
 				2223A486225F2B8D00894D87 /* SwiftyStringScore.framework in Frameworks */,
 				225990EF22560B9700DE3338 /* Unbox.framework in Frameworks */,
 			);
@@ -118,6 +135,7 @@
 				22B73CE82256009C0031D96F /* Assets.xcassets */,
 				22B73CEA2256009C0031D96F /* LaunchScreen.storyboard */,
 				22B73CED2256009C0031D96F /* Info.plist */,
+				22AF07F2225F34AA006873F3 /* CustomColors.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -151,6 +169,7 @@
 		225990ED22560B9700DE3338 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22AF07F4225F47C6006873F3 /* SafariServices.framework */,
 				2223A485225F2B8D00894D87 /* SwiftyStringScore.framework */,
 				225990EE22560B9700DE3338 /* Unbox.framework */,
 			);
@@ -276,10 +295,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22AF07EB225F2E25006873F3 /* SourceSansPro-ExtraLightItalic.ttf in Resources */,
+				22AF07EC225F2E25006873F3 /* SourceSansPro-Italic.ttf in Resources */,
+				22AF07E7225F2E25006873F3 /* SourceSansPro-BlackItalic.ttf in Resources */,
+				22AF07EF225F2E25006873F3 /* SourceSansPro-Regular.ttf in Resources */,
+				22AF07ED225F2E25006873F3 /* SourceSansPro-Light.ttf in Resources */,
 				22B73CEC2256009C0031D96F /* LaunchScreen.storyboard in Resources */,
 				22B73CE92256009C0031D96F /* Assets.xcassets in Resources */,
+				22AF07EA225F2E25006873F3 /* SourceSansPro-ExtraLight.ttf in Resources */,
+				22AF07E9225F2E25006873F3 /* SourceSansPro-BoldItalic.ttf in Resources */,
 				225990EB225608CD00DE3338 /* openmoji.json in Resources */,
+				22AF07F1225F2E25006873F3 /* SourceSansPro-SemiBoldItalic.ttf in Resources */,
+				22AF07E6225F2E25006873F3 /* SourceSansPro-Black.ttf in Resources */,
+				22AF07E8225F2E25006873F3 /* SourceSansPro-Bold.ttf in Resources */,
+				22AF07F0225F2E25006873F3 /* SourceSansPro-SemiBold.ttf in Resources */,
 				22B73CE72256009A0031D96F /* Main.storyboard in Resources */,
+				22AF07EE225F2E25006873F3 /* SourceSansPro-LightItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +356,7 @@
 				225990E9225608BA00DE3338 /* Sticker.swift in Sources */,
 				225990F122560ED200DE3338 /* StickersPickerCollectionViewCell.swift in Sources */,
 				2223A473225F295700894D87 /* LegalViewController.swift in Sources */,
+				22AF07F3225F34AA006873F3 /* CustomColors.swift in Sources */,
 				22B73CE22256009A0031D96F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,7 +517,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = OpenMoji/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/OpenMoji/General/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -508,7 +540,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = OpenMoji/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/OpenMoji/General/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -29,6 +29,10 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         
         self.title = "OpenMoji"
         
+        if let sourceSansFont = UIFont(name: "SourceSansPro-Bold", size: UIFont.labelFontSize){
+            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: sourceSansFont]
+        }
+        
         getDataFromJSON { (successfullyParsed) in
             
             if successfullyParsed{
