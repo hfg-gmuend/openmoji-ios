@@ -19,7 +19,7 @@ platform :ios do
   desc "Push a new beta build to TestFlight"
   lane :beta do
     increment_build_number
-    build_app(scheme: "Moovel Watch")
+    build_app(scheme: "OpenMoji")
     upload_to_testflight
   end
 end
