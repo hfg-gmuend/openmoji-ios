@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let userDefaults = UserDefaults()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -21,9 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: sourceSansFont],for: .selected)
             UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: sourceSansFont],for: .highlighted)
             UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: sourceSansFont],for: .application)
-
-
-
+        }
+        
+        if userDefaults.string(forKey: "globalSkinToneColorHex") == nil{
+           userDefaults.set("FCEA2B", forKey: "globalSkinToneColorHex")
         }
         
         return true

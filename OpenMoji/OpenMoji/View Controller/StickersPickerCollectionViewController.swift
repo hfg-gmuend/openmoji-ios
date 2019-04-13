@@ -14,6 +14,7 @@ import SwiftyStringScore
 class StickersPickerCollectionViewController: UICollectionViewController, UITextFieldDelegate {
 
     // MARK: - Properties
+    private let userDefaults = UserDefaults()
     private let reuseIdentifier = "StickerCell"
     private let itemsPerRow: CGFloat = 4
     private let sectionInsets = UIEdgeInsets(top: 20.0,
@@ -35,6 +36,10 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
             self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: sourceSansFont]
         }
         
+       
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         getDataFromJSON { (successfullyParsed) in
             if successfullyParsed{
                 self.collectionView.reloadData()
@@ -52,6 +57,62 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
                 let jsonFileData = try Data(contentsOf: jsonFilePath)
                 let stickers: [Sticker] = try unbox(data: jsonFileData)
                 stickersArray = stickers
+                
+                if let colorFromUserDefaultsAsHex = userDefaults.string(forKey: "globalSkinToneColorHex"){
+                    var isNotStandard = false
+                    var skinToneModifiers = [
+                        "1F3FB",
+                        "1F3FC",
+                        "1F3FD",
+                        "1F3FE",
+                        "1F3FF"
+                    ]
+                    
+                    switch colorFromUserDefaultsAsHex{
+                    case "FCEA2B":
+                        isNotStandard = false
+                        skinToneModifiers.remove(at: 0)
+                    case "fadcbc":
+                        isNotStandard = true
+                        skinToneModifiers.remove(at: 0)
+                    case "e0bb95":
+                        isNotStandard = true
+                        skinToneModifiers.remove(at: 0)
+                    case "bf8f68":
+                        isNotStandard = true
+                        skinToneModifiers.remove(at: 0)
+                    case "9b643d":
+                        isNotStandard = true
+                        skinToneModifiers.remove(at: 0)
+                    case "594539":
+                        isNotStandard = true
+                        skinToneModifiers.remove(at: 0)
+                    default:
+                        break
+                    }
+                    
+                    if isNotStandard == true{
+                        // Removes all yellow skin color emojis
+                        stickersArray.removeAll(where: {
+                            $0.hexcode == $0.skintoneBaseHexcode
+                        })
+                        
+                        // Gets rid of all other unwanted skin colors
+                        for skinTone in skinToneModifiers{
+                            stickersArray.removeAll(where: {
+                                $0.hexcode?.contains("-"+skinTone) == true
+                            })
+                        }
+                    }else{
+                        // Gets rid of all other unwanted skin colors
+                        for skinTone in skinToneModifiers{
+                            stickersArray.removeAll(where: {
+                                $0.hexcode?.contains("-"+skinTone) == true
+                            })
+                        }
+                    }
+                }
+                
                 print("Successfully parsed Stickers")
                 completion(true)
             }catch {
@@ -352,5 +413,10 @@ extension StickersPickerCollectionViewController: UICollectionViewDelegateFlowLa
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.left
+    }
+    
+    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
+        collectionView.collectionViewLayout.invalidateLayout()
+        self.view.setNeedsDisplay()
     }
 }
