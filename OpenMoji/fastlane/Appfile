@@ -1,4 +1,4 @@
-app_identifier("org.openmoji.openmoji-stickers-ios") # The bundle identifier of your app
+app_identifier("org.openmoji.openmoji-ios") # The bundle identifier of your app
 apple_id("apple@sam0711er.com") # Your Apple email address
 
 itc_team_id("588YB87VLP") # App Store Connect Team ID
