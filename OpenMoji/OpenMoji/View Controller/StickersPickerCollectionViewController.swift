@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Unbox
 import SwiftyStringScore
+import SafariServices
 
 class StickersPickerCollectionViewController: UICollectionViewController, UITextFieldDelegate {
 
@@ -31,12 +32,15 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         super.viewDidLoad()
         
         self.title = "OpenMoji"
+        searchButton.tintColor = .actionBlue
         
         if let sourceSansFont = UIFont(name: "SourceSansPro-Bold", size: UIFont.labelFontSize){
             self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: sourceSansFont]
+            
         }
         
-       
+        setupToolbar()
+        setupColorButton()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -126,6 +130,75 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
     }
     
     // MARK: - UI
+    let availableColors = ["FCEA2B", "fadcbc", "e0bb95", "bf8f68", "9b643d", "594539"]
+    @IBOutlet var chooseColorButton: UIButton!
+    var isChoosingColor = false
+    var buttonArray = [UIButton]()
+    @IBAction func chooseColorButtonAction(_ sender: Any) {
+        
+        if isChoosingColor{
+            for button in buttonArray{
+                button.removeFromSuperview()
+            }
+        }else{
+            addColorButtons()
+            isChoosingColor = true
+
+        }
+        
+
+    }
+    func setupColorButton(){
+        if let colorFromUserDefaultsAsHex = userDefaults.string(forKey: "globalSkinToneColorHex"){
+            chooseColorButton.backgroundColor = UIColor.init(hex: colorFromUserDefaultsAsHex)
+            chooseColorButton.layer.cornerRadius = chooseColorButton.frame.size.height/2
+        }
+    }
+    @objc func colorSelected(sender: UIButton){
+        
+        for button in buttonArray{
+            button.removeFromSuperview()
+        }
+        
+        chooseColorButton.backgroundColor = UIColor.init(hex: availableColors[sender.tag])
+        userDefaults.set(availableColors[sender.tag] , forKey: "globalSkinToneColorHex")
+        
+        isChoosingColor = false
+        
+        getDataFromJSON { (successfullyParsed) in
+            if successfullyParsed{
+                self.collectionView.reloadData()
+                self.collectionView.isHidden = false
+            }else{
+                self.collectionView.isHidden = true
+            }
+        }
+    }
+    func addColorButtons(){
+        buttonArray.removeAll()
+        
+        let safeInsetTop = self.view.safeAreaInsets.top
+        let safeInsetLeft = self.view.safeAreaInsets.left
+        
+        
+        if let colorFromUserDefaultsAsHex = userDefaults.string(forKey: "globalSkinToneColorHex"){
+            let modifiedColorsArray = availableColors.filter({ $0.contains(colorFromUserDefaultsAsHex) == false })
+            
+            for index in 0...modifiedColorsArray.count-1{
+                let buttonFrame = CGRect(x: safeInsetLeft, y: safeInsetTop + CGFloat(index * 40), width: 30, height: 30)
+                
+                let colorButton = UIButton(frame: buttonFrame)
+                colorButton.layer.cornerRadius = colorButton.frame.size.height/2
+                colorButton.backgroundColor = UIColor(hex: modifiedColorsArray[index]).withAlphaComponent(1.0)
+                colorButton.addTarget(self, action: #selector(colorSelected(sender:)), for: .touchUpInside)
+                colorButton.tag = index
+                
+                buttonArray.append(colorButton)
+                self.view.addSubview(colorButton)
+            }
+        }
+    }
+    
     @IBOutlet var aboutBarButtonItem: UIBarButtonItem!
     func showCopiedView(imageName: String){
         let copiedViewFrame = CGRect(x: 0, y: 0, width: 200, height: 200)
@@ -176,6 +249,30 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
             }
         }
     }
+    func setupToolbar(){
+        let websiteBarButtonItem = UIBarButtonItem(title: "OpenMoji.org", style: .plain, target: self, action: #selector(openWebsite))
+        websiteBarButtonItem.tintColor = .actionBlue
+        let flexibleSpacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+
+        
+        let licenseLabelContainerView = UIView(frame: CGRect(x: 0, y: 0, width: 120, height: 30))
+        let licenseLabel = UILabel(frame:  CGRect(x: 0, y: 0, width: 120, height: 30))
+        licenseLabel.text = "License: CC BY-SA 4.0"
+        licenseLabel.textAlignment = .right
+        licenseLabel.font = UIFont(name: "SourceSansPro-Regular", size: 12)
+        
+        licenseLabelContainerView.addSubview(licenseLabel)
+        
+        let licenseText = UIBarButtonItem(customView: licenseLabelContainerView)
+        
+      
+        self.toolbarItems = [websiteBarButtonItem, flexibleSpacer, licenseText]
+    }
+    @objc func openWebsite(){
+        guard let url = URL(string: "http://openmoji.org") else {return}
+        let safariViewController = SFSafariViewController(url: url)
+        self.present(safariViewController, animated: true, completion: nil)
+    }
     
     //MARK: - SEARCH
     var searchTextField = UITextField()
@@ -187,8 +284,12 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         searchTextField.delegate = self
         searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         searchTextField.autocorrectionType = .no
-
-        self.navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cancelSearch)), animated: true)
+        searchTextField.tintColor = .actionBlue
+        
+        let cancelButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cancelSearch))
+        cancelButtonItem.tintColor = .actionBlue
+        
+        self.navigationItem.setRightBarButton(cancelButtonItem, animated: true)
         self.navigationItem.titleView = self.searchTextField
         self.navigationItem.setLeftBarButton(nil, animated: true)
         
@@ -196,7 +297,10 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
     }
     
     @objc func cancelSearch(){
-        self.navigationItem.setLeftBarButton(aboutBarButtonItem, animated: true)
+        
+        let button = UIBarButtonItem(customView: chooseColorButton)
+        
+        self.navigationItem.setLeftBarButton(button, animated: true)
         self.navigationItem.setRightBarButton(self.searchButton, animated: true)
         self.searchTextField.text = nil
         self.navigationItem.titleView = nil
@@ -357,9 +461,11 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
                 
                 // Configure the cell
                 if let stickerImage = UIImage(named: imageName){
-                    UIPasteboard.general.image = stickerImage
+                    /*UIPasteboard.general.image = stickerImage
                     print("Copied image")
-                    showCopiedView(imageName: imageName)
+                    showCopiedView(imageName: imageName)*/
+                    
+                    showShareSheetWith(stickerImage)
                 }
             }
         }else{
@@ -369,13 +475,27 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
                 
                 // Configure the cell
                 if let stickerImage = UIImage(named: imageName){
-                    UIPasteboard.general.image = stickerImage
+                    /*UIPasteboard.general.image = stickerImage
                     print("Copied image")
-                    showCopiedView(imageName: imageName)
+                    showCopiedView(imageName: imageName)*/
+                    
+                    showShareSheetWith(stickerImage)
                 }
             }
         }
         
+    }
+    func showShareSheetWith(_ image: UIImage){
+        // Set up activity view controller
+        let imageToShare = [image]
+        let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+        
+        // exclude some activity types from the list (optional)
+        activityViewController.excludedActivityTypes = []
+        
+        // present the view controller
+        self.present(activityViewController, animated: true, completion: nil)
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

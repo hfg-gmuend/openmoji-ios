@@ -58,11 +58,17 @@
                             <outlet property="delegate" destination="k7m-P2-LrD" id="Fba-Ml-VWK"/>
                         </connections>
                     </collectionView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="OpenMoji" id="49w-oc-Tzc">
-                        <barButtonItem key="leftBarButtonItem" title="About" id="rWy-up-SF4">
-                            <connections>
-                                <segue destination="As3-bc-Czg" kind="presentation" id="xDL-X9-Xud"/>
-                            </connections>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="a2g-Ml-NdY">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bYk-qr-CKD">
+                                <rect key="frame" x="16" y="7" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.98712533712387085" green="0.91645139455795288" blue="0.17217540740966797" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="chooseColorButtonAction:" destination="k7m-P2-LrD" eventType="touchUpInside" id="1Ms-g9-lwO"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="KrB-zs-PlD">
                             <connections>
@@ -70,8 +76,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="aboutBarButtonItem" destination="rWy-up-SF4" id="BCP-Cy-gA3"/>
+                        <outlet property="chooseColorButton" destination="bYk-qr-CKD" id="Yfc-XW-6cb"/>
                         <outlet property="searchButton" destination="KrB-zs-PlD" id="BAg-a9-sIL"/>
                     </connections>
                 </collectionViewController>
@@ -104,7 +111,7 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="stickers/1F64B" translatesAutoresizingMaskIntoConstraints="NO" id="bL0-QH-xOR">
-                                <rect key="frame" x="97.666666666666742" y="596" width="180" height="180"/>
+                                <rect key="frame" x="97.666666666666686" y="596" width="180" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="P8N-wv-kRo">
                                         <variation key="heightClass=compact-widthClass=compact" constant="100"/>
@@ -262,8 +269,9 @@
         <!--Navigation Controller-->
         <scene sceneID="3ZC-qN-sEA">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gsd-Oi-YTY" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="Gsd-Oi-YTY" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EaI-VJ-jd2">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -272,6 +280,10 @@
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LpV-sm-l9e">
+                        <rect key="frame" x="0.0" y="729" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="k7m-P2-LrD" kind="relationship" relationship="rootViewController" id="bhF-Sv-JGw"/>
                     </connections>
