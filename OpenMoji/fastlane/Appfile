@@ -1,8 +1,8 @@
-app_identifier("org.openmoji.openmoji-ios") # The bundle identifier of your app
+app_identifier("org.openmoji.iOS-app") # The bundle identifier of your app
 apple_id("apple@sam0711er.com") # Your Apple email address
 
-itc_team_id("588YB87VLP") # App Store Connect Team ID
-team_id("119079858") # Developer Portal Team ID
+itc_team_id("120098622") # App Store Connect Team ID
+team_id("Q9297C64KP") # Developer Portal Team ID
 
 # For more information about the Appfile, see:
 #     https://docs.fastlane.tools/advanced/#appfile
