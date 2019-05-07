@@ -135,18 +135,7 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
     var isChoosingColor = false
     var buttonArray = [UIButton]()
     @IBAction func chooseColorButtonAction(_ sender: Any) {
-        
-        if isChoosingColor{
-            for button in buttonArray{
-                button.removeFromSuperview()
-            }
-        }else{
-            addColorButtons()
-            isChoosingColor = true
-
-        }
-        
-
+        showColorPicker()
     }
     func setupColorButton(){
         if let colorFromUserDefaultsAsHex = userDefaults.string(forKey: "globalSkinToneColorHex"){
@@ -154,16 +143,48 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
             chooseColorButton.layer.cornerRadius = chooseColorButton.frame.size.height/2
         }
     }
-    @objc func colorSelected(sender: UIButton){
+    func showColorPicker(){
+        var colorPicker = UIAlertController(title: "Choose Skin Tone", message: "Choose which skin tone the emojis shall have", preferredStyle: .actionSheet)
         
-        for button in buttonArray{
-            button.removeFromSuperview()
+        let yellowAlertAction = UIAlertAction(title: "✌️", style: .default) { (action) in
+            self.colorSelected(hex: "FCEA2B")
         }
         
-        chooseColorButton.backgroundColor = UIColor.init(hex: availableColors[sender.tag])
-        userDefaults.set(availableColors[sender.tag] , forKey: "globalSkinToneColorHex")
+        let skin1AlertAction = UIAlertAction(title: "✌🏻", style: .default) { (action) in
+            self.colorSelected(hex: "fadcbc")
+        }
         
-        isChoosingColor = false
+        let skin2AlertAction = UIAlertAction(title: "✌🏼", style: .default) { (action) in
+            self.colorSelected(hex: "e0bb95")
+        }
+        
+        let skin3AlertAction = UIAlertAction(title: "✌🏽", style: .default) { (action) in
+            self.colorSelected(hex: "bf8f68")
+        }
+        
+        let skin4AlertAction = UIAlertAction(title: "✌🏾", style: .default) { (action) in
+            self.colorSelected(hex: "9b643d")
+        }
+        
+        let skin5AlertAction = UIAlertAction(title: "✌🏿", style: .default) { (action) in
+            self.colorSelected(hex: "594539")
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        colorPicker.addAction(yellowAlertAction)
+        colorPicker.addAction(skin1AlertAction)
+        colorPicker.addAction(skin2AlertAction)
+        colorPicker.addAction(skin3AlertAction)
+        colorPicker.addAction(skin4AlertAction)
+        colorPicker.addAction(skin5AlertAction)
+        colorPicker.addAction(cancelAction)
+
+        self.present(colorPicker, animated: true, completion: nil)
+    }
+    @objc func colorSelected(hex: String){
+        chooseColorButton.backgroundColor = UIColor.init(hex: hex)
+        userDefaults.set(hex , forKey: "globalSkinToneColorHex")
         
         getDataFromJSON { (successfullyParsed) in
             if successfullyParsed{
@@ -174,7 +195,7 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
             }
         }
     }
-    func addColorButtons(){
+    /*func addColorButtons(){
         buttonArray.removeAll()
         
         let safeInsetTop = self.view.safeAreaInsets.top
@@ -197,7 +218,7 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
                 self.view.addSubview(colorButton)
             }
         }
-    }
+    }*/
     
     @IBOutlet var aboutBarButtonItem: UIBarButtonItem!
     func showCopiedView(imageName: String){
