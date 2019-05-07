@@ -75,22 +75,22 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
                     switch colorFromUserDefaultsAsHex{
                     case "FCEA2B":
                         isNotStandard = false
-                        skinToneModifiers.remove(at: 0)
+                        //skinToneModifiers.remove(at: 0)
                     case "fadcbc":
                         isNotStandard = true
                         skinToneModifiers.remove(at: 0)
                     case "e0bb95":
                         isNotStandard = true
-                        skinToneModifiers.remove(at: 0)
+                        skinToneModifiers.remove(at: 1)
                     case "bf8f68":
                         isNotStandard = true
-                        skinToneModifiers.remove(at: 0)
+                        skinToneModifiers.remove(at: 2)
                     case "9b643d":
                         isNotStandard = true
-                        skinToneModifiers.remove(at: 0)
+                        skinToneModifiers.remove(at: 3)
                     case "594539":
                         isNotStandard = true
-                        skinToneModifiers.remove(at: 0)
+                        skinToneModifiers.remove(at: 4)
                     default:
                         break
                     }
