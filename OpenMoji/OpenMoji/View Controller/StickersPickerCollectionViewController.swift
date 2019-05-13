@@ -351,7 +351,7 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
             return stickersArray.filter({
                 $0.annotation!.contains(filterText.lowercased()) ||
                 $0.hexcode!.contains(filterText) ||
-                $0.hexcode!.contains(filterText.lowercased()) ||
+                $0.hexcode!.lowercased().contains(filterText.lowercased()) ||
                 $0.emoji!.contains(filterText.lowercased()) ||
                 $0.group!.contains(filterText.lowercased()) ||
                 $0.subgroups!.contains(filterText.lowercased()) ||
