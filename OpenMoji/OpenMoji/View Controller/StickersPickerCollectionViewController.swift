@@ -17,7 +17,7 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
     // MARK: - Properties
     private let userDefaults = UserDefaults()
     private let reuseIdentifier = "StickerCell"
-    private let itemsPerRow: CGFloat = 4
+    private var itemsPerRow: CGFloat = 4
     private let sectionInsets = UIEdgeInsets(top: 20.0,
                                              left: 20.0,
                                              bottom: 20.0,
@@ -36,9 +36,9 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         
         if let sourceSansFont = UIFont(name: "SourceSansPro-Bold", size: UIFont.labelFontSize){
             self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: sourceSansFont]
-            
         }
         
+        setItemsPerRow()
         setupToolbar()
         setupColorButton()
     }
@@ -51,6 +51,11 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
             }else{
                 self.collectionView.isHidden = true
             }
+        }
+    }
+    func setItemsPerRow(){
+        if self.view.frame.size.width > 750{
+            itemsPerRow = 8
         }
     }
     
@@ -184,6 +189,8 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         colorPicker.addAction(skin5AlertAction)
         colorPicker.addAction(cancelAction)
 
+        colorPicker.popoverPresentationController?.barButtonItem = self.navigationItem.leftBarButtonItem
+        
         self.present(colorPicker, animated: true, completion: nil)
     }
     @objc func colorSelected(hex: String){
