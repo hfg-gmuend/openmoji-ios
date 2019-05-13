@@ -144,7 +144,7 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         }
     }
     func showColorPicker(){
-        var colorPicker = UIAlertController(title: "Choose Skin Tone", message: "Choose which skin tone the emojis shall have", preferredStyle: .actionSheet)
+        let colorPicker = UIAlertController(title: "Choose Skin Tone", message: "Choose which skin tone the emojis shall have", preferredStyle: .actionSheet)
         
         let yellowAlertAction = UIAlertAction(title: "✌️", style: .default) { (action) in
             self.colorSelected(hex: "FCEA2B")
@@ -195,30 +195,6 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
             }
         }
     }
-    /*func addColorButtons(){
-        buttonArray.removeAll()
-        
-        let safeInsetTop = self.view.safeAreaInsets.top
-        let safeInsetLeft = self.view.safeAreaInsets.left
-        
-        
-        if let colorFromUserDefaultsAsHex = userDefaults.string(forKey: "globalSkinToneColorHex"){
-            let modifiedColorsArray = availableColors.filter({ $0.contains(colorFromUserDefaultsAsHex) == false })
-            
-            for index in 0...modifiedColorsArray.count-1{
-                let buttonFrame = CGRect(x: safeInsetLeft, y: safeInsetTop + CGFloat(index * 40), width: 30, height: 30)
-                
-                let colorButton = UIButton(frame: buttonFrame)
-                colorButton.layer.cornerRadius = colorButton.frame.size.height/2
-                colorButton.backgroundColor = UIColor(hex: modifiedColorsArray[index]).withAlphaComponent(1.0)
-                colorButton.addTarget(self, action: #selector(colorSelected(sender:)), for: .touchUpInside)
-                colorButton.tag = index
-                
-                buttonArray.append(colorButton)
-                self.view.addSubview(colorButton)
-            }
-        }
-    }*/
     
     @IBOutlet var aboutBarButtonItem: UIBarButtonItem!
     func showCopiedView(imageName: String){
@@ -368,17 +344,9 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
     
     func filteredArray() -> [Sticker]{
         if filterText != ""{
-            
-            /*let filteredArray = stickersArray.filter({ $0.annotation!.score(word: filterText) >= 0.8 })
-            
-            if filteredArray.count > 0{
-                return filteredArray
-            }else{
-                return [Sticker]()
-            }*/
-            
             return stickersArray.filter({
                 $0.annotation!.contains(filterText.lowercased()) ||
+                $0.hexcode!.contains(filterText) ||
                 $0.hexcode!.contains(filterText.lowercased()) ||
                 $0.emoji!.contains(filterText.lowercased()) ||
                 $0.group!.contains(filterText.lowercased()) ||
@@ -386,8 +354,6 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
                 $0.tags!.contains(filterText.lowercased()) ||
                 $0.openmojiTags!.contains(filterText.lowercased())
             })
-            
-            //return stickersArray.filter{ $0.annotation!.contains(filterText) || $0.hexcode!.contains(filterText) || $0.emoji!.contains(filterText) || $0.group!.contains(filterText) || $0.subgroups!.contains(filterText) || $0.tags!.contains(filterText) || $0.openmojiTags!.contains(filterText) }
         }else{
             return [Sticker]()
         }
@@ -427,11 +393,13 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
                     cell.imageView.isHidden = false
                     cell.backgroundColor = UIColor.clear
                 }else{
+                    print("🥶 Error loading image named: \(imageName)")
                     cell.imageView.image = nil
                     cell.imageView.isHidden = true
                     cell.backgroundColor = UIColor.darkGray
                 }
             }else{
+                print("🥶 Error loading image with hexcode: \(String(describing: filteredArray()[indexPath.row].hexcode))")
                 cell.imageView.image = nil
                 cell.imageView.isHidden = true
                 cell.backgroundColor = UIColor.darkGray
@@ -447,11 +415,14 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
                     cell.imageView.isHidden = false
                     cell.backgroundColor = UIColor.clear
                 }else{
+                    print("🥶 Error loading image named: \(imageName)")
                     cell.imageView.image = nil
                     cell.imageView.isHidden = true
                     cell.backgroundColor = UIColor.darkGray
                 }
             }else{
+                print("🥶 Error loading image with hexcode: \(String(describing: filteredArray()[indexPath.row].hexcode))")
+
                 cell.imageView.image = nil
                 cell.imageView.isHidden = true
                 cell.backgroundColor = UIColor.darkGray
@@ -478,28 +449,18 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         if isFiltering{
             if let hexcode = filteredArray()[indexPath.row].hexcode{
                 let imageName = "stickers/\(hexcode)"
-                //print(imageName)
                 
                 // Configure the cell
                 if let stickerImage = UIImage(named: imageName){
-                    /*UIPasteboard.general.image = stickerImage
-                    print("Copied image")
-                    showCopiedView(imageName: imageName)*/
-                    
                     showShareSheetWith(stickerImage)
                 }
             }
         }else{
             if let hexcode = stickersArray[indexPath.row].hexcode{
                 let imageName = "stickers/\(hexcode)"
-                //print(imageName)
                 
                 // Configure the cell
                 if let stickerImage = UIImage(named: imageName){
-                    /*UIPasteboard.general.image = stickerImage
-                    print("Copied image")
-                    showCopiedView(imageName: imageName)*/
-                    
                     showShareSheetWith(stickerImage)
                 }
             }
