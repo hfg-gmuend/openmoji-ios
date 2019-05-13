@@ -1,0 +1,627 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2223A473225F295700894D87 /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2223A472225F295700894D87 /* LegalViewController.swift */; };
+		2223A486225F2B8D00894D87 /* SwiftyStringScore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2223A485225F2B8D00894D87 /* SwiftyStringScore.framework */; };
+		225990E5225605EE00DE3338 /* StickersPickerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225990E4225605EE00DE3338 /* StickersPickerCollectionViewController.swift */; };
+		225990E9225608BA00DE3338 /* Sticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225990E8225608BA00DE3338 /* Sticker.swift */; };
+		225990EF22560B9700DE3338 /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225990EE22560B9700DE3338 /* Unbox.framework */; };
+		225990F122560ED200DE3338 /* StickersPickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225990F022560ED200DE3338 /* StickersPickerCollectionViewCell.swift */; };
+		22AD043D2289C11100FE3943 /* openmoji.json in Resources */ = {isa = PBXBuildFile; fileRef = 22AD043C2289C11000FE3943 /* openmoji.json */; };
+		22AF07E6225F2E25006873F3 /* SourceSansPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2223A47A225F2AD000894D87 /* SourceSansPro-Black.ttf */; };
+		22AF07E7225F2E25006873F3 /* SourceSansPro-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2223A480225F2AD400894D87 /* SourceSansPro-BlackItalic.ttf */; };
+		22AF07E8225F2E25006873F3 /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2223A476225F2ACD00894D87 /* SourceSansPro-Bold.ttf */; };
+		22AF07E9225F2E25006873F3 /* SourceSansPro-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2223A479225F2ACF00894D87 /* SourceSansPro-BoldItalic.ttf */; };
+		22AF07EA225F2E25006873F3 /* SourceSansPro-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2223A47C225F2AD100894D87 /* SourceSansPro-ExtraLight.ttf */; };
+		22AF07EB225F2E25006873F3 /* SourceSansPro-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2223A478225F2ACF00894D87 /* SourceSansPro-ExtraLightItalic.ttf */; };
+		22AF07EC225F2E25006873F3 /* SourceSansPro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2223A47F225F2AD300894D87 /* SourceSansPro-Italic.ttf */; };
+		22AF07ED225F2E25006873F3 /* SourceSansPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2223A475225F2ACD00894D87 /* SourceSansPro-Light.ttf */; };
+		22AF07EE225F2E25006873F3 /* SourceSansPro-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2223A47B225F2AD000894D87 /* SourceSansPro-LightItalic.ttf */; };
+		22AF07EF225F2E25006873F3 /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2223A47E225F2AD200894D87 /* SourceSansPro-Regular.ttf */; };
+		22AF07F0225F2E25006873F3 /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2223A477225F2ACE00894D87 /* SourceSansPro-SemiBold.ttf */; };
+		22AF07F1225F2E25006873F3 /* SourceSansPro-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2223A47D225F2AD200894D87 /* SourceSansPro-SemiBoldItalic.ttf */; };
+		22AF07F3225F34AA006873F3 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AF07F2225F34AA006873F3 /* CustomColors.swift */; };
+		22AF07F5225F47C6006873F3 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AF07F4225F47C6006873F3 /* SafariServices.framework */; };
+		22B73CE22256009A0031D96F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B73CE12256009A0031D96F /* AppDelegate.swift */; };
+		22B73CE72256009A0031D96F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B73CE52256009A0031D96F /* Main.storyboard */; };
+		22B73CE92256009C0031D96F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22B73CE82256009C0031D96F /* Assets.xcassets */; };
+		22B73CEC2256009C0031D96F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B73CEA2256009C0031D96F /* LaunchScreen.storyboard */; };
+		22B73CF8225600B60031D96F /* Stickers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22B73CF7225600B60031D96F /* Stickers.xcassets */; };
+		22B73CFC225600B60031D96F /* OpenMoji Stickers.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 22B73CF5225600B40031D96F /* OpenMoji Stickers.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		22B73CFA225600B60031D96F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22B73CD62256009A0031D96F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22B73CF4225600B40031D96F;
+			remoteInfo = "OpenMoji Stickers";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		22B73D00225600B60031D96F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				22B73CFC225600B60031D96F /* OpenMoji Stickers.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2223A472225F295700894D87 /* LegalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
+		2223A475225F2ACD00894D87 /* SourceSansPro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Light.ttf"; sourceTree = "<group>"; };
+		2223A476225F2ACD00894D87 /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
+		2223A477225F2ACE00894D87 /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
+		2223A478225F2ACF00894D87 /* SourceSansPro-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		2223A479225F2ACF00894D87 /* SourceSansPro-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-BoldItalic.ttf"; sourceTree = "<group>"; };
+		2223A47A225F2AD000894D87 /* SourceSansPro-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Black.ttf"; sourceTree = "<group>"; };
+		2223A47B225F2AD000894D87 /* SourceSansPro-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-LightItalic.ttf"; sourceTree = "<group>"; };
+		2223A47C225F2AD100894D87 /* SourceSansPro-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-ExtraLight.ttf"; sourceTree = "<group>"; };
+		2223A47D225F2AD200894D87 /* SourceSansPro-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		2223A47E225F2AD200894D87 /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
+		2223A47F225F2AD300894D87 /* SourceSansPro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Italic.ttf"; sourceTree = "<group>"; };
+		2223A480225F2AD400894D87 /* SourceSansPro-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-BlackItalic.ttf"; sourceTree = "<group>"; };
+		2223A485225F2B8D00894D87 /* SwiftyStringScore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyStringScore.framework; path = Carthage/Build/iOS/SwiftyStringScore.framework; sourceTree = "<group>"; };
+		225990E4225605EE00DE3338 /* StickersPickerCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickersPickerCollectionViewController.swift; sourceTree = "<group>"; };
+		225990E8225608BA00DE3338 /* Sticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sticker.swift; sourceTree = "<group>"; };
+		225990EE22560B9700DE3338 /* Unbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Unbox.framework; path = Carthage/Build/iOS/Unbox.framework; sourceTree = "<group>"; };
+		225990F022560ED200DE3338 /* StickersPickerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickersPickerCollectionViewCell.swift; sourceTree = "<group>"; };
+		22AD043C2289C11000FE3943 /* openmoji.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = openmoji.json; sourceTree = "<group>"; };
+		22AF07F2225F34AA006873F3 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
+		22AF07F4225F47C6006873F3 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		22B73CDE2256009A0031D96F /* OpenMoji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenMoji.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		22B73CE12256009A0031D96F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		22B73CE62256009A0031D96F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		22B73CE82256009C0031D96F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		22B73CEB2256009C0031D96F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		22B73CED2256009C0031D96F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22B73CF5225600B40031D96F /* OpenMoji Stickers.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "OpenMoji Stickers.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22B73CF7225600B60031D96F /* Stickers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Stickers.xcassets; sourceTree = "<group>"; };
+		22B73CF9225600B60031D96F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		22B73CDB2256009A0031D96F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22AF07F5225F47C6006873F3 /* SafariServices.framework in Frameworks */,
+				2223A486225F2B8D00894D87 /* SwiftyStringScore.framework in Frameworks */,
+				225990EF22560B9700DE3338 /* Unbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2223A474225F2AB800894D87 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2223A47A225F2AD000894D87 /* SourceSansPro-Black.ttf */,
+				2223A480225F2AD400894D87 /* SourceSansPro-BlackItalic.ttf */,
+				2223A476225F2ACD00894D87 /* SourceSansPro-Bold.ttf */,
+				2223A479225F2ACF00894D87 /* SourceSansPro-BoldItalic.ttf */,
+				2223A47C225F2AD100894D87 /* SourceSansPro-ExtraLight.ttf */,
+				2223A478225F2ACF00894D87 /* SourceSansPro-ExtraLightItalic.ttf */,
+				2223A47F225F2AD300894D87 /* SourceSansPro-Italic.ttf */,
+				2223A475225F2ACD00894D87 /* SourceSansPro-Light.ttf */,
+				2223A47B225F2AD000894D87 /* SourceSansPro-LightItalic.ttf */,
+				2223A47E225F2AD200894D87 /* SourceSansPro-Regular.ttf */,
+				2223A477225F2ACE00894D87 /* SourceSansPro-SemiBold.ttf */,
+				2223A47D225F2AD200894D87 /* SourceSansPro-SemiBoldItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		2223A481225F2ADC00894D87 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				2223A474225F2AB800894D87 /* Fonts */,
+				22B73CE12256009A0031D96F /* AppDelegate.swift */,
+				22B73CE52256009A0031D96F /* Main.storyboard */,
+				22B73CE82256009C0031D96F /* Assets.xcassets */,
+				22B73CEA2256009C0031D96F /* LaunchScreen.storyboard */,
+				22B73CED2256009C0031D96F /* Info.plist */,
+				22AF07F2225F34AA006873F3 /* CustomColors.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		2223A482225F2B0A00894D87 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				225990E4225605EE00DE3338 /* StickersPickerCollectionViewController.swift */,
+				2223A472225F295700894D87 /* LegalViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		2223A483225F2B2500894D87 /* Data & Model */ = {
+			isa = PBXGroup;
+			children = (
+				225990E8225608BA00DE3338 /* Sticker.swift */,
+				22AD043C2289C11000FE3943 /* openmoji.json */,
+			);
+			path = "Data & Model";
+			sourceTree = "<group>";
+		};
+		2223A484225F2B3300894D87 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				225990F022560ED200DE3338 /* StickersPickerCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		225990ED22560B9700DE3338 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22AF07F4225F47C6006873F3 /* SafariServices.framework */,
+				2223A485225F2B8D00894D87 /* SwiftyStringScore.framework */,
+				225990EE22560B9700DE3338 /* Unbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		22B73CD52256009A0031D96F = {
+			isa = PBXGroup;
+			children = (
+				22B73CE02256009A0031D96F /* OpenMoji */,
+				22B73CF6225600B50031D96F /* OpenMoji Stickers */,
+				22B73CDF2256009A0031D96F /* Products */,
+				225990ED22560B9700DE3338 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		22B73CDF2256009A0031D96F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22B73CDE2256009A0031D96F /* OpenMoji.app */,
+				22B73CF5225600B40031D96F /* OpenMoji Stickers.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22B73CE02256009A0031D96F /* OpenMoji */ = {
+			isa = PBXGroup;
+			children = (
+				2223A481225F2ADC00894D87 /* General */,
+				2223A482225F2B0A00894D87 /* View Controller */,
+				2223A484225F2B3300894D87 /* Cells */,
+				2223A483225F2B2500894D87 /* Data & Model */,
+			);
+			path = OpenMoji;
+			sourceTree = "<group>";
+		};
+		22B73CF6225600B50031D96F /* OpenMoji Stickers */ = {
+			isa = PBXGroup;
+			children = (
+				22B73CF7225600B60031D96F /* Stickers.xcassets */,
+				22B73CF9225600B60031D96F /* Info.plist */,
+			);
+			path = "OpenMoji Stickers";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		22B73CDD2256009A0031D96F /* OpenMoji */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22B73CF02256009C0031D96F /* Build configuration list for PBXNativeTarget "OpenMoji" */;
+			buildPhases = (
+				22B73CDA2256009A0031D96F /* Sources */,
+				22B73CDB2256009A0031D96F /* Frameworks */,
+				22B73CDC2256009A0031D96F /* Resources */,
+				22B73D00225600B60031D96F /* Embed App Extensions */,
+				225990EC2256098600DE3338 /* Carthage Copy Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22B73CFB225600B60031D96F /* PBXTargetDependency */,
+			);
+			name = OpenMoji;
+			productName = OpenMoji;
+			productReference = 22B73CDE2256009A0031D96F /* OpenMoji.app */;
+			productType = "com.apple.product-type.application";
+		};
+		22B73CF4225600B40031D96F /* OpenMoji Stickers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22B73CFD225600B60031D96F /* Build configuration list for PBXNativeTarget "OpenMoji Stickers" */;
+			buildPhases = (
+				22B73CF3225600B40031D96F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "OpenMoji Stickers";
+			productName = "OpenMoji Stickers";
+			productReference = 22B73CF5225600B40031D96F /* OpenMoji Stickers.appex */;
+			productType = "com.apple.product-type.app-extension.messages-sticker-pack";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		22B73CD62256009A0031D96F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = OpenMoji;
+				TargetAttributes = {
+					22B73CDD2256009A0031D96F = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					22B73CF4225600B40031D96F = {
+						CreatedOnToolsVersion = 10.2;
+					};
+				};
+			};
+			buildConfigurationList = 22B73CD92256009A0031D96F /* Build configuration list for PBXProject "OpenMoji" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 22B73CD52256009A0031D96F;
+			productRefGroup = 22B73CDF2256009A0031D96F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				22B73CDD2256009A0031D96F /* OpenMoji */,
+				22B73CF4225600B40031D96F /* OpenMoji Stickers */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		22B73CDC2256009A0031D96F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22AF07EB225F2E25006873F3 /* SourceSansPro-ExtraLightItalic.ttf in Resources */,
+				22AF07EC225F2E25006873F3 /* SourceSansPro-Italic.ttf in Resources */,
+				22AF07E7225F2E25006873F3 /* SourceSansPro-BlackItalic.ttf in Resources */,
+				22AF07EF225F2E25006873F3 /* SourceSansPro-Regular.ttf in Resources */,
+				22AF07ED225F2E25006873F3 /* SourceSansPro-Light.ttf in Resources */,
+				22B73CEC2256009C0031D96F /* LaunchScreen.storyboard in Resources */,
+				22AD043D2289C11100FE3943 /* openmoji.json in Resources */,
+				22B73CE92256009C0031D96F /* Assets.xcassets in Resources */,
+				22AF07EA225F2E25006873F3 /* SourceSansPro-ExtraLight.ttf in Resources */,
+				22AF07E9225F2E25006873F3 /* SourceSansPro-BoldItalic.ttf in Resources */,
+				22AF07F1225F2E25006873F3 /* SourceSansPro-SemiBoldItalic.ttf in Resources */,
+				22AF07E6225F2E25006873F3 /* SourceSansPro-Black.ttf in Resources */,
+				22AF07E8225F2E25006873F3 /* SourceSansPro-Bold.ttf in Resources */,
+				22AF07F0225F2E25006873F3 /* SourceSansPro-SemiBold.ttf in Resources */,
+				22B73CE72256009A0031D96F /* Main.storyboard in Resources */,
+				22AF07EE225F2E25006873F3 /* SourceSansPro-LightItalic.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22B73CF3225600B40031D96F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22B73CF8225600B60031D96F /* Stickers.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		225990EC2256098600DE3338 /* Carthage Copy Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Unbox.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyStringScore.framework",
+			);
+			name = "Carthage Copy Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22B73CDA2256009A0031D96F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				225990E5225605EE00DE3338 /* StickersPickerCollectionViewController.swift in Sources */,
+				225990E9225608BA00DE3338 /* Sticker.swift in Sources */,
+				225990F122560ED200DE3338 /* StickersPickerCollectionViewCell.swift in Sources */,
+				2223A473225F295700894D87 /* LegalViewController.swift in Sources */,
+				22AF07F3225F34AA006873F3 /* CustomColors.swift in Sources */,
+				22B73CE22256009A0031D96F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		22B73CFB225600B60031D96F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22B73CF4225600B40031D96F /* OpenMoji Stickers */;
+			targetProxy = 22B73CFA225600B60031D96F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		22B73CE52256009A0031D96F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22B73CE62256009A0031D96F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		22B73CEA2256009C0031D96F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22B73CEB2256009C0031D96F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		22B73CEE2256009C0031D96F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		22B73CEF2256009C0031D96F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		22B73CF12256009C0031D96F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 14;
+				DEVELOPMENT_TEAM = Q9297C64KP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = OpenMoji/General/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.openmoji.iOS-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		22B73CF22256009C0031D96F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 14;
+				DEVELOPMENT_TEAM = Q9297C64KP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = OpenMoji/General/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.openmoji.iOS-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		22B73CFE225600B60031D96F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 14;
+				DEVELOPMENT_TEAM = Q9297C64KP;
+				INFOPLIST_FILE = "OpenMoji Stickers/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.openmoji.iOS-app.StickerPackExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		22B73CFF225600B60031D96F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 14;
+				DEVELOPMENT_TEAM = Q9297C64KP;
+				INFOPLIST_FILE = "OpenMoji Stickers/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.openmoji.iOS-app.StickerPackExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		22B73CD92256009A0031D96F /* Build configuration list for PBXProject "OpenMoji" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22B73CEE2256009C0031D96F /* Debug */,
+				22B73CEF2256009C0031D96F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22B73CF02256009C0031D96F /* Build configuration list for PBXNativeTarget "OpenMoji" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22B73CF12256009C0031D96F /* Debug */,
+				22B73CF22256009C0031D96F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22B73CFD225600B60031D96F /* Build configuration list for PBXNativeTarget "OpenMoji Stickers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22B73CFE225600B60031D96F /* Debug */,
+				22B73CFF225600B60031D96F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 22B73CD62256009A0031D96F /* Project object */;
+}
