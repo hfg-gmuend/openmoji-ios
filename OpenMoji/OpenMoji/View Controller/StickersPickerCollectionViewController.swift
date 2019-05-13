@@ -115,6 +115,10 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
                             })
                         }
                     }
+                    
+                    stickersArray.removeAll(where: {
+                        $0.skintoneCombination?.contains("multiple") == true
+                    })
                 }
                 
                 print("Successfully parsed Stickers")

@@ -18,6 +18,7 @@ struct Sticker: Unboxable {
     public var openmojiTags : String?
     public var order : String?
     public var skintone : String?
+    public var skintoneCombination : String?
     public var skintoneBaseEmoji : String?
     public var skintoneBaseHexcode : String?
     public var subgroups : String?
@@ -34,6 +35,7 @@ struct Sticker: Unboxable {
         openmojiTags = try unboxer.unbox(key: "openmoji_tags")
         order = try unboxer.unbox(key: "order")
         skintone = try unboxer.unbox(key: "skintone")
+        skintoneCombination = try unboxer.unbox(key: "skintone_combination")
         skintoneBaseEmoji = try unboxer.unbox(key: "skintone_base_emoji")
         skintoneBaseHexcode = try unboxer.unbox(key: "skintone_base_hexcode")
         subgroups = try unboxer.unbox(key: "subgroups")
@@ -73,6 +75,9 @@ struct Sticker: Unboxable {
         }
         if skintone != nil{
             dictionary["skintone"] = skintone
+        }
+        if skintoneCombination != nil{
+            dictionary["skintoneCombination"] = skintoneCombination
         }
         if skintoneBaseEmoji != nil{
             dictionary["skintone_base_emoji"] = skintoneBaseEmoji
