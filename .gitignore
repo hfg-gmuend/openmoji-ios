@@ -16,3 +16,4 @@
 # Ignore Carthage folder files
 Carthage/
 OpenMoji/fastlane/report.xml
+*.svn-base
