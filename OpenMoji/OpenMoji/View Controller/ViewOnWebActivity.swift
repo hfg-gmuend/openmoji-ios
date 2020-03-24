@@ -12,11 +12,17 @@ import SafariServices
 
 class ViewOnWebActivity: UIActivity {
     override var activityTitle: String?{
-        return "View Emoji on Web"
+        return "View on OpenMoji.org"
     }
     
     override var activityImage: UIImage?{
-        return UIImage(named: "")
+        //return UIImage(named: "")
+        if #available(iOS 13.0, *) {
+            return UIImage(systemName: "safari")
+        } else {
+            // Fallback on earlier versions
+            return nil
+        }
     }
     
     override var activityType: UIActivity.ActivityType{
