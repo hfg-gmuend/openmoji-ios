@@ -463,6 +463,7 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
                 
                 // Configure the cell
                 if let stickerImage = UIImage(named: imageName){
+                    lastSharedEmojiName = hexcode
                     showShareSheetWith(stickerImage)
                 }
             }
@@ -472,22 +473,35 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
                 
                 // Configure the cell
                 if let stickerImage = UIImage(named: imageName){
+                    lastSharedEmojiName = hexcode
                     showShareSheetWith(stickerImage)
                 }
             }
         }
         
     }
+    var lastSharedEmojiName = ""
     func showShareSheetWith(_ image: UIImage){
         // Set up activity view controller
         let imageToShare = [image]
-        let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+        let viewOnWebActivity = ViewOnWebActivity()
+        let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: [viewOnWebActivity])
         activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
         
-        // exclude some activity types from the list (optional)
         activityViewController.excludedActivityTypes = []
         
-        // present the view controller
+        
+        activityViewController.completionWithItemsHandler = {(activityType: UIActivity.ActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
+            
+            if activityType == UIActivity.ActivityType("org.openmoji.iOS-app.open-on-web-activity"){
+                guard let urlFromActivity = URL(string: "https://openmoji.org/library/#emoji=" + self.lastSharedEmojiName) else {return}
+                let safariViewController = SFSafariViewController(url: urlFromActivity)
+                self.present(safariViewController, animated: true, completion: nil)
+            }
+        }
+        
+        
+        // Present View controller
         self.present(activityViewController, animated: true, completion: nil)
     }
     
@@ -500,7 +514,6 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         }
         
         return UICollectionReusableView()
-        
     }
 }
 
