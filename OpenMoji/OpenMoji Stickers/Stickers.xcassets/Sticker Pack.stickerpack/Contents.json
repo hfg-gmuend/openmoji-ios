@@ -10331,6 +10331,9 @@
     },
     {
       "filename" : "E329.sticker"
+    },
+    {
+      "filename" : "E003.sticker"
     }
   ],
   "info" : {
@@ -10338,6 +10341,6 @@
     "author" : "xcode"
   },
   "properties" : {
-    "grid-size" : "regular"
+    "grid-size" : "small"
   }
 }

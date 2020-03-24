@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221C29F6242A077000B41C47 /* ViewOnWebActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221C29F5242A077000B41C47 /* ViewOnWebActivity.swift */; };
 		2223A473225F295700894D87 /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2223A472225F295700894D87 /* LegalViewController.swift */; };
 		2223A486225F2B8D00894D87 /* SwiftyStringScore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2223A485225F2B8D00894D87 /* SwiftyStringScore.framework */; };
 		225990E5225605EE00DE3338 /* StickersPickerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225990E4225605EE00DE3338 /* StickersPickerCollectionViewController.swift */; };
@@ -61,6 +62,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		221C29F5242A077000B41C47 /* ViewOnWebActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOnWebActivity.swift; sourceTree = "<group>"; };
 		2223A472225F295700894D87 /* LegalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
 		2223A475225F2ACD00894D87 /* SourceSansPro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Light.ttf"; sourceTree = "<group>"; };
 		2223A476225F2ACD00894D87 /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			children = (
 				225990E4225605EE00DE3338 /* StickersPickerCollectionViewController.swift */,
 				2223A472225F295700894D87 /* LegalViewController.swift */,
+				221C29F5242A077000B41C47 /* ViewOnWebActivity.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				221C29F6242A077000B41C47 /* ViewOnWebActivity.swift in Sources */,
 				225990E5225605EE00DE3338 /* StickersPickerCollectionViewController.swift in Sources */,
 				225990E9225608BA00DE3338 /* Sticker.swift in Sources */,
 				225990F122560ED200DE3338 /* StickersPickerCollectionViewCell.swift in Sources */,
