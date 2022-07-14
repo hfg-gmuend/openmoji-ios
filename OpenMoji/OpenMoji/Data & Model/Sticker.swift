@@ -15,7 +15,7 @@ struct Sticker: Codable {
     public var openmojiAuthor : String?
     public var openmojiDate : String?
     public var openmojiTags : String?
-    public var order : String?
+    public var order : Int?
     public var skintone : String?
     public var skintoneCombination : String?
     public var skintoneBaseEmoji : String?
