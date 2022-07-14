@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if userDefaults.string(forKey: "globalSkinToneColorHex") == nil{
            userDefaults.set("FCEA2B", forKey: "globalSkinToneColorHex")
         }
+ 
         
         return true
     }

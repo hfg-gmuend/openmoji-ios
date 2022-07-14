@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gsd-Oi-YTY">
-    <device id="retina5_9" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gsd-Oi-YTY">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -61,7 +59,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="OpenMoji" id="49w-oc-Tzc">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="a2g-Ml-NdY">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bYk-qr-CKD">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="bYk-qr-CKD">
                                 <rect key="frame" x="16" y="7" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.98712533712387085" green="0.91645139455795288" blue="0.17217540740966797" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -163,7 +161,7 @@
                                     <constraint firstItem="Xn0-U3-Igm" firstAttribute="top" secondItem="tbu-ZR-3p3" secondAttribute="top" constant="1" id="wTW-Rh-SYx"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8m8-F5-9VL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8m8-F5-9VL">
                                 <rect key="frame" x="141" y="473" width="93" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="BHr-6l-kV4"/>
@@ -175,6 +173,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Lj5-RV-Scg"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="bL0-QH-xOR" firstAttribute="top" secondItem="eMG-I0-cAy" secondAttribute="bottom" constant="16" id="0EF-y0-4Cm"/>
@@ -200,7 +199,6 @@
                             <constraint firstItem="bL0-QH-xOR" firstAttribute="leading" secondItem="eMG-I0-cAy" secondAttribute="trailing" constant="8" id="rSP-Rr-tdS"/>
                             <constraint firstItem="8m8-F5-9VL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Lj5-RV-Scg" secondAttribute="leading" symbolic="YES" id="t9I-vk-2zD"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Lj5-RV-Scg"/>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="EJb-5I-4UG"/>
@@ -295,7 +293,7 @@
         <!--Navigation Controller-->
         <scene sceneID="iUx-PW-F9V">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="As3-bc-Czg" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="legalNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="As3-bc-Czg" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="46x-P1-unT">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>

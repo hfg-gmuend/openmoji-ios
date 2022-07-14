@@ -12,7 +12,6 @@
 		2223A486225F2B8D00894D87 /* SwiftyStringScore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2223A485225F2B8D00894D87 /* SwiftyStringScore.framework */; };
 		225990E5225605EE00DE3338 /* StickersPickerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225990E4225605EE00DE3338 /* StickersPickerCollectionViewController.swift */; };
 		225990E9225608BA00DE3338 /* Sticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225990E8225608BA00DE3338 /* Sticker.swift */; };
-		225990EF22560B9700DE3338 /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225990EE22560B9700DE3338 /* Unbox.framework */; };
 		225990F122560ED200DE3338 /* StickersPickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225990F022560ED200DE3338 /* StickersPickerCollectionViewCell.swift */; };
 		22AD043D2289C11100FE3943 /* openmoji.json in Resources */ = {isa = PBXBuildFile; fileRef = 22AD043C2289C11000FE3943 /* openmoji.json */; };
 		22AF07E6225F2E25006873F3 /* SourceSansPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2223A47A225F2AD000894D87 /* SourceSansPro-Black.ttf */; };
@@ -79,7 +78,6 @@
 		2223A485225F2B8D00894D87 /* SwiftyStringScore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyStringScore.framework; path = Carthage/Build/iOS/SwiftyStringScore.framework; sourceTree = "<group>"; };
 		225990E4225605EE00DE3338 /* StickersPickerCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickersPickerCollectionViewController.swift; sourceTree = "<group>"; };
 		225990E8225608BA00DE3338 /* Sticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sticker.swift; sourceTree = "<group>"; };
-		225990EE22560B9700DE3338 /* Unbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Unbox.framework; path = Carthage/Build/iOS/Unbox.framework; sourceTree = "<group>"; };
 		225990F022560ED200DE3338 /* StickersPickerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickersPickerCollectionViewCell.swift; sourceTree = "<group>"; };
 		22AD043C2289C11000FE3943 /* openmoji.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = openmoji.json; sourceTree = "<group>"; };
 		22AF07F2225F34AA006873F3 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 			files = (
 				22AF07F5225F47C6006873F3 /* SafariServices.framework in Frameworks */,
 				2223A486225F2B8D00894D87 /* SwiftyStringScore.framework in Frameworks */,
-				225990EF22560B9700DE3338 /* Unbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,7 +171,6 @@
 			children = (
 				22AF07F4225F47C6006873F3 /* SafariServices.framework */,
 				2223A485225F2B8D00894D87 /* SwiftyStringScore.framework */,
-				225990EE22560B9700DE3338 /* Unbox.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -336,7 +332,6 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Unbox.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyStringScore.framework",
 			);
 			name = "Carthage Copy Frameworks";

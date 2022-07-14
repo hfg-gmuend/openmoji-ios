@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import Unbox
 import SwiftyStringScore
 import SafariServices
 
@@ -32,6 +31,7 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         super.viewDidLoad()
         
         self.title = "OpenMoji"
+        self.view.backgroundColor = .white
         searchButton.tintColor = .actionBlue
         
         if let sourceSansFont = UIFont(name: "SourceSansPro-Bold", size: UIFont.labelFontSize){
@@ -63,8 +63,11 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
     func getDataFromJSON(completion: (Bool) -> Void){
         if let jsonFilePath = Bundle.main.url(forResource: "openmoji", withExtension: "json"){
             do{
+                let decoder = JSONDecoder()
+                
                 let jsonFileData = try Data(contentsOf: jsonFilePath)
-                let stickers: [Sticker] = try unbox(data: jsonFileData)
+                let stickers: [Sticker] = try decoder.decode([Sticker].self, from: jsonFileData)
+                print(stickers)
                 stickersArray = stickers
                 
                 if let colorFromUserDefaultsAsHex = userDefaults.string(forKey: "globalSkinToneColorHex"){

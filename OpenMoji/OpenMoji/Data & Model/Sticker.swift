@@ -5,9 +5,8 @@
 
 
 import Foundation
-import Unbox
 
-struct Sticker: Unboxable {
+struct Sticker: Codable {
     
     public var annotation : String?
     public var emoji : String?
@@ -23,25 +22,7 @@ struct Sticker: Unboxable {
     public var skintoneBaseHexcode : String?
     public var subgroups : String?
     public var tags : String?
-    public var unicode : String?
-    
-    init(unboxer: Unboxer) throws {
-        annotation = try unboxer.unbox(key: "annotation")
-        emoji = try unboxer.unbox(key: "emoji")
-        group = try unboxer.unbox(key: "group")
-        hexcode = try unboxer.unbox(key: "hexcode")
-        openmojiAuthor = try unboxer.unbox(key: "openmoji_author")
-        openmojiDate = try unboxer.unbox(key: "openmoji_date")
-        openmojiTags = try unboxer.unbox(key: "openmoji_tags")
-        order = try unboxer.unbox(key: "order")
-        skintone = try unboxer.unbox(key: "skintone")
-        skintoneCombination = try unboxer.unbox(key: "skintone_combination")
-        skintoneBaseEmoji = try unboxer.unbox(key: "skintone_base_emoji")
-        skintoneBaseHexcode = try unboxer.unbox(key: "skintone_base_hexcode")
-        subgroups = try unboxer.unbox(key: "subgroups")
-        tags = try unboxer.unbox(key: "tags")
-        unicode = try unboxer.unbox(key: "unicode")
-    }
+    public var unicode : Float?
     
     /**
      * Returns all the available property values in the form of [String:Any] object where the key is the approperiate json key and the value is the value of the corresponding property
@@ -98,3 +79,23 @@ struct Sticker: Unboxable {
     }
     
 }
+
+/*extension Sticker: Codable {
+    init(from decoder: Decoder) throws {
+        annotation = try decoder.decode("annotation")
+        emoji = try decoder.decode("emoji")
+        group = try decoder.decode("group")
+        hexcode = try decoder.decode("hexcode")
+        openmojiAuthor = try decoder.decode("openmoji_author")
+        openmojiDate = try decoder.decode("openmoji_date")
+        openmojiTags = try decoder.decode("openmoji_tags")
+        order = try decoder.decode("order")
+        skintone = try decoder.decode("skintone")
+        skintoneCombination = try decoder.decode("skintone_combination")
+        skintoneBaseEmoji = try decoder.decode("skintone_base_emoji")
+        skintoneBaseHexcode = try decoder.decode("skintone_base_hexcode")
+        subgroups = try decoder.decode("subgroups")
+        tags = try decoder.decode("tags")
+        unicode = try decoder.decode("unicode")
+    }
+}*/
