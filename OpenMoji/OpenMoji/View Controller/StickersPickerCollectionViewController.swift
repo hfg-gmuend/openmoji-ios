@@ -67,7 +67,6 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
                 
                 let jsonFileData = try Data(contentsOf: jsonFilePath)
                 let stickers: [Sticker] = try decoder.decode([Sticker].self, from: jsonFileData)
-                print(stickers)
                 stickersArray = stickers
                 
                 if let colorFromUserDefaultsAsHex = userDefaults.string(forKey: "globalSkinToneColorHex"){
@@ -104,10 +103,16 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
                     }
                     
                     if isNotStandard == true{
+                        // Not working
+                        print("stickersArray.count before removing base versions is: \(stickersArray.count)")
+                        
                         // Removes all yellow skin color emojis
                         stickersArray.removeAll(where: {
                             $0.hexcode == $0.skintoneBaseHexcode
                         })
+                        
+                        print("stickersArray.count after removing base versions is: \(stickersArray.count)")
+
                         
                         // Gets rid of all other unwanted skin colors
                         for skinTone in skinToneModifiers{
@@ -280,7 +285,7 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         self.toolbarItems = [websiteBarButtonItem, flexibleSpacer, licenseText]
     }
     @objc func openWebsite(){
-        guard let url = URL(string: "http://openmoji.org") else {return}
+        guard let url = URL(string: "https://openmoji.org") else {return}
         let safariViewController = SFSafariViewController(url: url)
         self.present(safariViewController, animated: true, completion: nil)
     }
