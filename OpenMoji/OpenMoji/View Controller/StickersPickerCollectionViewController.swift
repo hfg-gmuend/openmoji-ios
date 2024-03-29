@@ -312,16 +312,14 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         
         self.navigationItem.setRightBarButton(cancelButtonItem, animated: true)
         self.navigationItem.titleView = self.searchTextField
-        self.navigationItem.setLeftBarButton(nil, animated: true)
         
         searchTextField.becomeFirstResponder()
     }
     
     @objc func cancelSearch(){
         
-        let button = UIBarButtonItem(customView: chooseColorButton)
-        
-        self.navigationItem.setLeftBarButton(button, animated: true)
+        setupColorButton()
+     
         self.navigationItem.setRightBarButton(self.searchButton, animated: true)
         self.searchTextField.text = nil
         self.navigationItem.titleView = nil
