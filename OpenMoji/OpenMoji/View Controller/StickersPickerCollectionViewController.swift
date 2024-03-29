@@ -8,8 +8,6 @@
 
 import Foundation
 import UIKit
-import Unbox
-import SwiftyStringScore
 import SafariServices
 
 class StickersPickerCollectionViewController: UICollectionViewController, UITextFieldDelegate {
@@ -32,6 +30,7 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         super.viewDidLoad()
         
         self.title = "OpenMoji"
+        self.view.backgroundColor = .white
         searchButton.tintColor = .actionBlue
         
         if let sourceSansFont = UIFont(name: "SourceSansPro-Bold", size: UIFont.labelFontSize){
@@ -63,8 +62,10 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
     func getDataFromJSON(completion: (Bool) -> Void){
         if let jsonFilePath = Bundle.main.url(forResource: "openmoji", withExtension: "json"){
             do{
+                let decoder = JSONDecoder()
+                
                 let jsonFileData = try Data(contentsOf: jsonFilePath)
-                let stickers: [Sticker] = try unbox(data: jsonFileData)
+                let stickers: [Sticker] = try decoder.decode([Sticker].self, from: jsonFileData)
                 stickersArray = stickers
                 
                 if let colorFromUserDefaultsAsHex = userDefaults.string(forKey: "globalSkinToneColorHex"){
@@ -101,10 +102,16 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
                     }
                     
                     if isNotStandard == true{
+                        // Not working
+                        print("stickersArray.count before removing base versions is: \(stickersArray.count)")
+                        
                         // Removes all yellow skin color emojis
                         stickersArray.removeAll(where: {
                             $0.hexcode == $0.skintoneBaseHexcode
                         })
+                        
+                        print("stickersArray.count after removing base versions is: \(stickersArray.count)")
+
                         
                         // Gets rid of all other unwanted skin colors
                         for skinTone in skinToneModifiers{
@@ -139,7 +146,6 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
     }
     
     // MARK: - UI
-    let availableColors = ["FCEA2B", "fadcbc", "e0bb95", "bf8f68", "9b643d", "594539"]
     @IBOutlet var chooseColorButton: UIButton!
     var isChoosingColor = false
     var buttonArray = [UIButton]()
@@ -148,12 +154,19 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
     }
     func setupColorButton(){
         if let colorFromUserDefaultsAsHex = userDefaults.string(forKey: "globalSkinToneColorHex"){
-            chooseColorButton.backgroundColor = UIColor.init(hex: colorFromUserDefaultsAsHex)
-            chooseColorButton.layer.cornerRadius = chooseColorButton.frame.size.height/2
+            if let buttonImage = UIImage(named: mapHexToEmoji(hex: colorFromUserDefaultsAsHex)) {
+                chooseColorButton.setImage(buttonImage, for: .normal)
+                chooseColorButton.imageView?.contentMode = .scaleAspectFit // or .scaleAspectFill
+                
+//                chooseColorButton.translatesAutoresizingMaskIntoConstraints = false
+//                NSLayoutConstraint.activate([
+//                    chooseColorButton.widthAnchor.constraint(equalTo: chooseColorButton.heightAnchor)
+//                ])
+            }
         }
     }
     func showColorPicker(){
-        let colorPicker = UIAlertController(title: "Choose Skin Tone", message: "Choose which skin tone the emojis shall have", preferredStyle: .actionSheet)
+        let colorPicker = UIAlertController(title: "Pick a Skin Tone", message: "Select a skin tone for emojis that support customization", preferredStyle: .actionSheet)
         
         let yellowAlertAction = UIAlertAction(title: "✌️", style: .default) { (action) in
             self.colorSelected(hex: "FCEA2B")
@@ -194,9 +207,9 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         self.present(colorPicker, animated: true, completion: nil)
     }
     @objc func colorSelected(hex: String){
-        chooseColorButton.backgroundColor = UIColor.init(hex: hex)
         userDefaults.set(hex , forKey: "globalSkinToneColorHex")
-        
+        setupColorButton()
+
         getDataFromJSON { (successfullyParsed) in
             if successfullyParsed{
                 self.collectionView.reloadData()
@@ -277,7 +290,7 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         self.toolbarItems = [websiteBarButtonItem, flexibleSpacer, licenseText]
     }
     @objc func openWebsite(){
-        guard let url = URL(string: "http://openmoji.org") else {return}
+        guard let url = URL(string: "https://openmoji.org") else {return}
         let safariViewController = SFSafariViewController(url: url)
         self.present(safariViewController, animated: true, completion: nil)
     }
@@ -353,22 +366,28 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         completion()
     }
     
-    func filteredArray() -> [Sticker]{
-        if filterText != ""{
-            return stickersArray.filter({
-                $0.annotation!.contains(filterText.lowercased()) ||
-                $0.hexcode!.contains(filterText) ||
-                $0.hexcode!.lowercased().contains(filterText.lowercased()) ||
-                $0.emoji!.contains(filterText.lowercased()) ||
-                $0.group!.contains(filterText.lowercased()) ||
-                $0.subgroups!.contains(filterText.lowercased()) ||
-                $0.tags!.contains(filterText.lowercased()) ||
-                $0.openmojiTags!.contains(filterText.lowercased())
-            })
-        }else{
+    func filteredArray() -> [Sticker] {
+        guard !filterText.isEmpty else {
             return [Sticker]()
         }
+
+        return stickersArray.filter { sticker in
+            // Use optional chaining and nil-coalescing to provide default values for optionals
+            let annotationContains = sticker.annotation?.lowercased().contains(filterText.lowercased()) ?? false
+            let hexcodeContains = sticker.hexcode?.lowercased().contains(filterText.lowercased()) ?? false
+            let emojiContains = sticker.emoji?.contains(filterText.lowercased()) ?? false
+            let groupContains = sticker.group?.contains(filterText.lowercased()) ?? false
+            let subgroupsContains = sticker.subgroups?.contains(filterText.lowercased()) ?? false
+            
+            // For optional arrays like `tags`, safely check for containment
+            let tagsContain = sticker.tags?.contains(where: { $0.lowercased().contains(filterText.lowercased()) }) ?? false
+            let openmojiTagsContain = sticker.openmojiTags?.contains(filterText.lowercased()) ?? false
+
+            // Combine all conditions
+            return annotationContains || hexcodeContains || emojiContains || groupContains || subgroupsContains || tagsContain || openmojiTagsContain
+        }
     }
+
 
 
     // MARK: UICollectionViewDataSource
@@ -514,6 +533,25 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         }
         
         return UICollectionReusableView()
+    }
+    
+    func mapHexToEmoji(hex:String) -> String{
+        switch hex{
+        case "FCEA2B":
+            return "stickers/270C"
+        case "fadcbc":
+            return "stickers/270C-1F3FB"
+        case "e0bb95":
+            return "stickers/270C-1F3FC"
+        case "bf8f68":
+            return "stickers/270C-1F3FD"
+        case "9b643d":
+            return "stickers/270C-1F3FE"
+        case "594539":
+            return "stickers/270C-1F3FF"
+        default:
+            return ""
+        }
     }
 }
 
