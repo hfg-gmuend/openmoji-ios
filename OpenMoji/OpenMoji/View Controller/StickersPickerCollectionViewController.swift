@@ -252,6 +252,7 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
     func updateSearchResults(_ searchText: String, completion: () -> Void){
         isFiltering = true
         filterText = searchText
+        collectionView.setContentOffset(.zero, animated: false)
         completion()
     }
     
