@@ -146,7 +146,6 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
     }
     
     // MARK: - UI
-    let availableColors = ["FCEA2B", "fadcbc", "e0bb95", "bf8f68", "9b643d", "594539"]
     @IBOutlet var chooseColorButton: UIButton!
     var isChoosingColor = false
     var buttonArray = [UIButton]()
@@ -155,12 +154,19 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
     }
     func setupColorButton(){
         if let colorFromUserDefaultsAsHex = userDefaults.string(forKey: "globalSkinToneColorHex"){
-            chooseColorButton.backgroundColor = UIColor.init(hex: colorFromUserDefaultsAsHex)
-            chooseColorButton.layer.cornerRadius = chooseColorButton.frame.size.height/2
+            if let buttonImage = UIImage(named: mapHexToEmoji(hex: colorFromUserDefaultsAsHex)) {
+                chooseColorButton.setImage(buttonImage, for: .normal)
+                chooseColorButton.imageView?.contentMode = .scaleAspectFit // or .scaleAspectFill
+                
+//                chooseColorButton.translatesAutoresizingMaskIntoConstraints = false
+//                NSLayoutConstraint.activate([
+//                    chooseColorButton.widthAnchor.constraint(equalTo: chooseColorButton.heightAnchor)
+//                ])
+            }
         }
     }
     func showColorPicker(){
-        let colorPicker = UIAlertController(title: "Choose Skin Tone", message: "Choose which skin tone the emojis shall have", preferredStyle: .actionSheet)
+        let colorPicker = UIAlertController(title: "Pick a Skin Tone", message: "Select a skin tone for emojis that support customization", preferredStyle: .actionSheet)
         
         let yellowAlertAction = UIAlertAction(title: "✌️", style: .default) { (action) in
             self.colorSelected(hex: "FCEA2B")
@@ -201,9 +207,9 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         self.present(colorPicker, animated: true, completion: nil)
     }
     @objc func colorSelected(hex: String){
-        chooseColorButton.backgroundColor = UIColor.init(hex: hex)
         userDefaults.set(hex , forKey: "globalSkinToneColorHex")
-        
+        setupColorButton()
+
         getDataFromJSON { (successfullyParsed) in
             if successfullyParsed{
                 self.collectionView.reloadData()
@@ -527,6 +533,25 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         }
         
         return UICollectionReusableView()
+    }
+    
+    func mapHexToEmoji(hex:String) -> String{
+        switch hex{
+        case "FCEA2B":
+            return "stickers/270C"
+        case "fadcbc":
+            return "stickers/270C-1F3FB"
+        case "e0bb95":
+            return "stickers/270C-1F3FC"
+        case "bf8f68":
+            return "stickers/270C-1F3FD"
+        case "9b643d":
+            return "stickers/270C-1F3FE"
+        case "594539":
+            return "stickers/270C-1F3FF"
+        default:
+            return ""
+        }
     }
 }
 
