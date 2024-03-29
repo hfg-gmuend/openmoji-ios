@@ -78,6 +78,24 @@ struct Sticker: Codable {
         return dictionary
     }
     
+    // Add this enum inside your Sticker struct
+        enum CodingKeys: String, CodingKey {
+            case annotation
+            case emoji
+            case group
+            case hexcode
+            case openmojiAuthor = "openmoji_author"
+            case openmojiDate = "openmoji_date"
+            case openmojiTags = "openmoji_tags"
+            case order
+            case skintone
+            case skintoneCombination = "skintone_combination"
+            case skintoneBaseEmoji = "skintone_base_emoji"
+            case skintoneBaseHexcode = "skintone_base_hexcode"
+            case subgroups
+            case tags
+            case unicode
+        }
 }
 
 /*extension Sticker: Codable {
