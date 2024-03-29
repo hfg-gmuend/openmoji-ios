@@ -38,7 +38,6 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         }
         
         setItemsPerRow()
-        setupToolbar()
         setupColorButton()
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -270,25 +269,7 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
             }
         }
     }
-    func setupToolbar(){
-        let websiteBarButtonItem = UIBarButtonItem(title: "OpenMoji.org", style: .plain, target: self, action: #selector(openWebsite))
-        websiteBarButtonItem.tintColor = .actionBlue
-        let flexibleSpacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-
-        
-        let licenseLabelContainerView = UIView(frame: CGRect(x: 0, y: 0, width: 120, height: 30))
-        let licenseLabel = UILabel(frame:  CGRect(x: 0, y: 0, width: 120, height: 30))
-        licenseLabel.text = "License: CC BY-SA 4.0"
-        licenseLabel.textAlignment = .right
-        licenseLabel.font = UIFont(name: "SourceSansPro-Regular", size: 12)
-        
-        licenseLabelContainerView.addSubview(licenseLabel)
-        
-        let licenseText = UIBarButtonItem(customView: licenseLabelContainerView)
-        
-      
-        self.toolbarItems = [websiteBarButtonItem, flexibleSpacer, licenseText]
-    }
+  
     @objc func openWebsite(){
         guard let url = URL(string: "https://openmoji.org") else {return}
         let safariViewController = SFSafariViewController(url: url)

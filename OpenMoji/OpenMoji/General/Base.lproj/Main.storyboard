@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gsd-Oi-YTY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BWd-tw-RZW">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -92,7 +93,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skin Tone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8c-4W-bQz">
-                                <rect key="frame" x="16" y="106" width="91.666666666666671" height="31"/>
+                                <rect key="frame" x="16" y="106" width="85.666666666666671" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="S0c-Bx-ZMc"/>
                                 </constraints>
@@ -119,7 +120,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="License: CC BY-SA 4.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMG-I0-cAy">
-                                <rect key="frame" x="120.66666666666669" y="549" width="134" height="31"/>
+                                <rect key="frame" x="131" y="549" width="113" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="113" id="mR0-dT-HGh"/>
                                     <constraint firstAttribute="height" constant="31" id="pxa-8d-nV6"/>
@@ -263,10 +264,45 @@
             </objects>
             <point key="canvasLocation" x="3628" y="137.4384236453202"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Recents View Controller-->
+        <scene sceneID="Uhk-Q8-t4R">
+            <objects>
+                <viewController id="p4V-XP-X9u" customClass="RecentsViewController" customModule="OpenMoji" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yaf-Od-QcM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="WI4-Xn-rhB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="O3O-Sy-dD3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DYf-Ok-zR7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1746" y="856"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="9gI-1W-3Sl">
+            <objects>
+                <tabBarController id="BWd-tw-RZW" customClass="TabBarController" customModule="OpenMoji" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0ey-ss-eF6">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Gsd-Oi-YTY" kind="relationship" relationship="viewControllers" id="4e5-ea-hwB"/>
+                        <segue destination="wbI-nv-T6k" kind="relationship" relationship="viewControllers" id="J91-bU-gDs"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9GW-X6-TT7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-182" y="460"/>
+        </scene>
+        <!--OpenMoji-->
         <scene sceneID="3ZC-qN-sEA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="Gsd-Oi-YTY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="OpenMoji" image="square.grid.3x3.topleft.filled" catalog="system" id="1aj-X3-CqH"/>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EaI-VJ-jd2">
@@ -278,7 +314,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LpV-sm-l9e">
-                        <rect key="frame" x="0.0" y="729" width="375" height="49"/>
+                        <rect key="frame" x="0.0" y="680" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
@@ -307,9 +343,41 @@
             </objects>
             <point key="canvasLocation" x="2718.840579710145" y="137.94642857142856"/>
         </scene>
+        <!--Recents-->
+        <scene sceneID="IUc-Aw-9ej">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="wbI-nv-T6k" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Recents" image="clock.fill" catalog="system" id="WmQ-nR-Psr"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QgR-5x-cJk">
+                        <rect key="frame" x="0.0" y="50" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="17"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zF9-hR-Uyn">
+                        <rect key="frame" x="0.0" y="680" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="p4V-XP-X9u" kind="relationship" relationship="rootViewController" id="mwU-Vi-bvG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6cU-WB-pZQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="838" y="856"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="clock.fill" catalog="system" width="128" height="123"/>
+        <image name="square.grid.3x3.topleft.filled" catalog="system" width="128" height="113"/>
         <image name="stickers/1F64B" width="618" height="618"/>
         <image name="stickers/2764" width="618" height="618"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
