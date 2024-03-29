@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import SwiftyStringScore
 import SafariServices
 
 class StickersPickerCollectionViewController: UICollectionViewController, UITextFieldDelegate {
@@ -361,22 +360,28 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         completion()
     }
     
-    func filteredArray() -> [Sticker]{
-        if filterText != ""{
-            return stickersArray.filter({
-                $0.annotation!.contains(filterText.lowercased()) ||
-                $0.hexcode!.contains(filterText) ||
-                $0.hexcode!.lowercased().contains(filterText.lowercased()) ||
-                $0.emoji!.contains(filterText.lowercased()) ||
-                $0.group!.contains(filterText.lowercased()) ||
-                $0.subgroups!.contains(filterText.lowercased()) ||
-                $0.tags!.contains(filterText.lowercased()) ||
-                $0.openmojiTags!.contains(filterText.lowercased())
-            })
-        }else{
+    func filteredArray() -> [Sticker] {
+        guard !filterText.isEmpty else {
             return [Sticker]()
         }
+
+        return stickersArray.filter { sticker in
+            // Use optional chaining and nil-coalescing to provide default values for optionals
+            let annotationContains = sticker.annotation?.lowercased().contains(filterText.lowercased()) ?? false
+            let hexcodeContains = sticker.hexcode?.lowercased().contains(filterText.lowercased()) ?? false
+            let emojiContains = sticker.emoji?.contains(filterText.lowercased()) ?? false
+            let groupContains = sticker.group?.contains(filterText.lowercased()) ?? false
+            let subgroupsContains = sticker.subgroups?.contains(filterText.lowercased()) ?? false
+            
+            // For optional arrays like `tags`, safely check for containment
+            let tagsContain = sticker.tags?.contains(where: { $0.lowercased().contains(filterText.lowercased()) }) ?? false
+            let openmojiTagsContain = sticker.openmojiTags?.contains(filterText.lowercased()) ?? false
+
+            // Combine all conditions
+            return annotationContains || hexcodeContains || emojiContains || groupContains || subgroupsContains || tagsContain || openmojiTagsContain
+        }
     }
+
 
 
     // MARK: UICollectionViewDataSource
