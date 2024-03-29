@@ -12,6 +12,7 @@ class StickersManager {
     static let shared = StickersManager()
     private let userDefaults = UserDefaults.standard
     var stickersArray: [Sticker] = []
+    private let recentStickersKey = "recentStickers"
 
     private init() {} // Makes this a singleton class
 
@@ -103,4 +104,36 @@ class StickersManager {
     }
 
     // Add any additional methods you might need, e.g., filtering stickers
+    
+    
+    // MARK: - Recent Stickers using Hexcodes
+        func addRecentSticker(_ sticker: Sticker) {
+            guard let hexcode = sticker.hexcode else { return }
+            
+            var recentStickersHexcodes = getRecentStickersHexcodes()
+            recentStickersHexcodes.insert(hexcode, at: 0) // Add to the beginning of the array
+            // Limit the size of the array to 20 items (assuming you wanted 20, though you've mentioned 100 in your code)
+            recentStickersHexcodes = Array(recentStickersHexcodes.prefix(20))
+            
+            print(recentStickersHexcodes)
+            
+            // Save the array of hexcodes to UserDefaults
+            userDefaults.set(recentStickersHexcodes, forKey: recentStickersKey)
+        }
+
+        func getRecentStickersHexcodes() -> [String] {
+            // Retrieve and return the array of hexcodes
+            return userDefaults.stringArray(forKey: recentStickersKey) ?? []
+        }
+
+        // Assuming you have a method to convert hexcodes back to Stickers
+        func getRecentStickers() -> [Sticker] {
+            let hexcodes = getRecentStickersHexcodes()
+            let stickers = hexcodes.compactMap { hexcode -> Sticker? in
+                // Implement logic to convert hexcode back to Sticker
+                // For example, find the sticker in stickersArray with this hexcode
+                return stickersArray.first { $0.hexcode == hexcode }
+            }
+            return stickers
+        }
 }

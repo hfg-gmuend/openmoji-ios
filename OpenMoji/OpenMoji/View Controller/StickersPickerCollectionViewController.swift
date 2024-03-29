@@ -368,7 +368,10 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
             }
         }
         
+        
         if isFiltering{
+            StickersManager.shared.addRecentSticker(filteredArray()[indexPath.row])
+
             if let hexcode = filteredArray()[indexPath.row].hexcode{
                 let imageName = "stickers/\(hexcode)"
                 
@@ -379,6 +382,8 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
                 }
             }
         }else{
+            StickersManager.shared.addRecentSticker(StickersManager.shared.stickersArray[indexPath.row])
+
             if let hexcode = StickersManager.shared.stickersArray[indexPath.row].hexcode{
                 let imageName = "stickers/\(hexcode)"
                 
