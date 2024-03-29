@@ -301,7 +301,7 @@
         <!--OpenMoji-->
         <scene sceneID="3ZC-qN-sEA">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="Gsd-Oi-YTY" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gsd-Oi-YTY" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="OpenMoji" image="square.grid.3x3.topleft.filled" catalog="system" id="1aj-X3-CqH"/>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -314,7 +314,6 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LpV-sm-l9e">
-                        <rect key="frame" x="0.0" y="680" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>

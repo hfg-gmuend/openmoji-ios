@@ -36,7 +36,7 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         if let sourceSansFont = UIFont(name: "SourceSansPro-Bold", size: UIFont.labelFontSize){
             self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: sourceSansFont]
         }
-        
+                
         setItemsPerRow()
         setupColorButton()
     }
