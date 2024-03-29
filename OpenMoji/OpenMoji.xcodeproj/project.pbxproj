@@ -34,6 +34,11 @@
 		22B73CF8225600B60031D96F /* Stickers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22B73CF7225600B60031D96F /* Stickers.xcassets */; };
 		22B73CFC225600B60031D96F /* OpenMoji Stickers.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 22B73CF5225600B40031D96F /* OpenMoji Stickers.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		22E285CD2BB6873000633EDC /* StringScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E285CC2BB6873000633EDC /* StringScore.swift */; };
+		22E9874D2BB6C9FB0073EBA2 /* StickersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E9874C2BB6C9FB0073EBA2 /* StickersManager.swift */; };
+		22E9874F2BB6D1060073EBA2 /* RecentStickersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E9874E2BB6D1060073EBA2 /* RecentStickersCollectionViewCell.swift */; };
+		22F73CD52BB6B65C009BE427 /* RecentsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F73CD42BB6B65C009BE427 /* RecentsCollectionViewController.swift */; };
+		22F73CD72BB6B75F009BE427 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F73CD62BB6B75F009BE427 /* AboutView.swift */; };
+		22F73CD92BB6B8A2009BE427 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F73CD82BB6B8A2009BE427 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +96,11 @@
 		22B73CF7225600B60031D96F /* Stickers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Stickers.xcassets; sourceTree = "<group>"; };
 		22B73CF9225600B60031D96F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22E285CC2BB6873000633EDC /* StringScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringScore.swift; sourceTree = "<group>"; };
+		22E9874C2BB6C9FB0073EBA2 /* StickersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickersManager.swift; sourceTree = "<group>"; };
+		22E9874E2BB6D1060073EBA2 /* RecentStickersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentStickersCollectionViewCell.swift; sourceTree = "<group>"; };
+		22F73CD42BB6B65C009BE427 /* RecentsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsCollectionViewController.swift; sourceTree = "<group>"; };
+		22F73CD62BB6B75F009BE427 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		22F73CD82BB6B8A2009BE427 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,9 +152,12 @@
 		2223A482225F2B0A00894D87 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				22F73CD82BB6B8A2009BE427 /* TabBarController.swift */,
 				225990E4225605EE00DE3338 /* StickersPickerCollectionViewController.swift */,
+				22F73CD42BB6B65C009BE427 /* RecentsCollectionViewController.swift */,
 				2223A472225F295700894D87 /* LegalViewController.swift */,
 				221C29F5242A077000B41C47 /* ViewOnWebActivity.swift */,
+				22F73CD62BB6B75F009BE427 /* AboutView.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -153,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				225990E8225608BA00DE3338 /* Sticker.swift */,
+				22E9874C2BB6C9FB0073EBA2 /* StickersManager.swift */,
 				22AD043C2289C11000FE3943 /* openmoji.json */,
 			);
 			path = "Data & Model";
@@ -162,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				225990F022560ED200DE3338 /* StickersPickerCollectionViewCell.swift */,
+				22E9874E2BB6D1060073EBA2 /* RecentStickersCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -328,7 +343,12 @@
 			files = (
 				221C29F6242A077000B41C47 /* ViewOnWebActivity.swift in Sources */,
 				225990E5225605EE00DE3338 /* StickersPickerCollectionViewController.swift in Sources */,
+				22E9874F2BB6D1060073EBA2 /* RecentStickersCollectionViewCell.swift in Sources */,
+				22F73CD92BB6B8A2009BE427 /* TabBarController.swift in Sources */,
+				22E9874D2BB6C9FB0073EBA2 /* StickersManager.swift in Sources */,
 				225990E9225608BA00DE3338 /* Sticker.swift in Sources */,
+				22F73CD52BB6B65C009BE427 /* RecentsCollectionViewController.swift in Sources */,
+				22F73CD72BB6B75F009BE427 /* AboutView.swift in Sources */,
 				225990F122560ED200DE3338 /* StickersPickerCollectionViewCell.swift in Sources */,
 				2223A473225F295700894D87 /* LegalViewController.swift in Sources */,
 				22AF07F3225F34AA006873F3 /* CustomColors.swift in Sources */,
@@ -497,7 +517,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = OpenMoji/General/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -523,7 +543,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = OpenMoji/General/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
