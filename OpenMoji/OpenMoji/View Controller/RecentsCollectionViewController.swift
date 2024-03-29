@@ -113,19 +113,22 @@ class RecentsCollectionViewController: UICollectionViewController {
             }
         }
         
-        if let hexcode = StickersManager.shared.getRecentStickers()[indexPath.row].hexcode{
-            let imageName = "stickers/\(hexcode)"
-            
-            // Configure the cell
-            if let stickerImage = UIImage(named: imageName){
-                lastSharedEmojiName = hexcode
-                showShareSheetWith(stickerImage)
+        if let cell = collectionView.cellForItem(at: indexPath) {
+            let sourceRect = collectionView.convert(cell.frame, to: self.view)
+            if let hexcode = StickersManager.shared.getRecentStickers()[indexPath.row].hexcode{
+                let imageName = "stickers/\(hexcode)"
+                
+                // Configure the cell
+                if let stickerImage = UIImage(named: imageName){
+                    lastSharedEmojiName = hexcode
+                    showShareSheetWith(stickerImage, sourceView: self.view, sourceRect: sourceRect)
+                }
             }
         }
         
     }
     var lastSharedEmojiName = ""
-    func showShareSheetWith(_ image: UIImage){
+    func showShareSheetWith(_ image: UIImage, sourceView: UIView, sourceRect: CGRect){
         // Set up activity view controller
         let imageToShare = [image]
         let viewOnWebActivity = ViewOnWebActivity()
@@ -144,6 +147,11 @@ class RecentsCollectionViewController: UICollectionViewController {
             }
         }
         
+        // Configure presentation for iPads
+        if let popoverController = activityViewController.popoverPresentationController {
+            popoverController.sourceView = sourceView
+            popoverController.sourceRect = sourceRect
+        }
         
         // Present View controller
         self.present(activityViewController, animated: true, completion: nil)
