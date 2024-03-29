@@ -22,7 +22,6 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
                                              right: 20.0)
     
     
-    var stickersArray = [Sticker]()
     var isFiltering = false
     var filterText = ""
     
@@ -42,7 +41,8 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        getDataFromJSON { (successfullyParsed) in
+        
+        StickersManager.shared.getDataFromJSON{ (successfullyParsed) in
             if successfullyParsed{
                 self.collectionView.reloadData()
                 self.collectionView.isHidden = false
@@ -54,93 +54,6 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
     func setItemsPerRow(){
         if self.view.frame.size.width > 750{
             itemsPerRow = 8
-        }
-    }
-    
-    // MARK: - Data
-    func getDataFromJSON(completion: (Bool) -> Void){
-        if let jsonFilePath = Bundle.main.url(forResource: "openmoji", withExtension: "json"){
-            do{
-                let decoder = JSONDecoder()
-                
-                let jsonFileData = try Data(contentsOf: jsonFilePath)
-                let stickers: [Sticker] = try decoder.decode([Sticker].self, from: jsonFileData)
-                stickersArray = stickers
-                
-                if let colorFromUserDefaultsAsHex = userDefaults.string(forKey: "globalSkinToneColorHex"){
-                    var isNotStandard = false
-                    var skinToneModifiers = [
-                        "1F3FB",
-                        "1F3FC",
-                        "1F3FD",
-                        "1F3FE",
-                        "1F3FF"
-                    ]
-                    
-                    switch colorFromUserDefaultsAsHex{
-                    case "FCEA2B":
-                        isNotStandard = false
-                        //skinToneModifiers.remove(at: 0)
-                    case "fadcbc":
-                        isNotStandard = true
-                        skinToneModifiers.remove(at: 0)
-                    case "e0bb95":
-                        isNotStandard = true
-                        skinToneModifiers.remove(at: 1)
-                    case "bf8f68":
-                        isNotStandard = true
-                        skinToneModifiers.remove(at: 2)
-                    case "9b643d":
-                        isNotStandard = true
-                        skinToneModifiers.remove(at: 3)
-                    case "594539":
-                        isNotStandard = true
-                        skinToneModifiers.remove(at: 4)
-                    default:
-                        break
-                    }
-                    
-                    if isNotStandard == true{
-                        // Not working
-                        print("stickersArray.count before removing base versions is: \(stickersArray.count)")
-                        
-                        // Removes all yellow skin color emojis
-                        stickersArray.removeAll(where: {
-                            $0.hexcode == $0.skintoneBaseHexcode
-                        })
-                        
-                        print("stickersArray.count after removing base versions is: \(stickersArray.count)")
-
-                        
-                        // Gets rid of all other unwanted skin colors
-                        for skinTone in skinToneModifiers{
-                            stickersArray.removeAll(where: {
-                                $0.hexcode?.contains("-"+skinTone) == true
-                            })
-                        }
-                    }else{
-                        // Gets rid of all other unwanted skin colors
-                        for skinTone in skinToneModifiers{
-                            stickersArray.removeAll(where: {
-                                $0.hexcode?.contains("-"+skinTone) == true
-                            })
-                        }
-                    }
-                    
-                    stickersArray.removeAll(where: {
-                        $0.skintoneCombination?.contains("multiple") == true
-                    })
-                }
-                
-                print("Successfully parsed Stickers")
-                completion(true)
-            }catch {
-                print("Error \(error)")
-                completion(false)
-            }
-        }else{
-            print("openmoji.json is inaccesible")
-            completion(false)
         }
     }
     
@@ -209,7 +122,7 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         userDefaults.set(hex , forKey: "globalSkinToneColorHex")
         setupColorButton()
 
-        getDataFromJSON { (successfullyParsed) in
+        StickersManager.shared.getDataFromJSON { (successfullyParsed) in
             if successfullyParsed{
                 self.collectionView.reloadData()
                 self.collectionView.isHidden = false
@@ -350,7 +263,7 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
             return [Sticker]()
         }
 
-        return stickersArray.filter { sticker in
+        return StickersManager.shared.stickersArray.filter { sticker in
             // Use optional chaining and nil-coalescing to provide default values for optionals
             let annotationContains = sticker.annotation?.lowercased().contains(filterText.lowercased()) ?? false
             let hexcodeContains = sticker.hexcode?.lowercased().contains(filterText.lowercased()) ?? false
@@ -384,7 +297,7 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
             print(filteredArray().count)
             return filteredArray().count
         }else{
-            return stickersArray.count
+            return StickersManager.shared.stickersArray.count
         }
     }
 
@@ -414,7 +327,7 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
                 cell.backgroundColor = UIColor.darkGray
             }
         }else{
-            if let hexcode = stickersArray[indexPath.row].hexcode{
+            if let hexcode = StickersManager.shared.stickersArray[indexPath.row].hexcode{
                 let imageName = "stickers/\(hexcode)"
                 //print(imageName)
                 
@@ -466,7 +379,7 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
                 }
             }
         }else{
-            if let hexcode = stickersArray[indexPath.row].hexcode{
+            if let hexcode = StickersManager.shared.stickersArray[indexPath.row].hexcode{
                 let imageName = "stickers/\(hexcode)"
                 
                 // Configure the cell
