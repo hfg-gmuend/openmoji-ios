@@ -368,36 +368,41 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
             }
         }
         
-        
-        if isFiltering{
-            StickersManager.shared.addRecentSticker(filteredArray()[indexPath.row])
+        if let cell = collectionView.cellForItem(at: indexPath) {
+            let sourceRect = collectionView.convert(cell.frame, to: self.view)
+            
+            if isFiltering{
+                StickersManager.shared.addRecentSticker(filteredArray()[indexPath.row])
 
-            if let hexcode = filteredArray()[indexPath.row].hexcode{
-                let imageName = "stickers/\(hexcode)"
-                
-                // Configure the cell
-                if let stickerImage = UIImage(named: imageName){
-                    lastSharedEmojiName = hexcode
-                    showShareSheetWith(stickerImage)
+                if let hexcode = filteredArray()[indexPath.row].hexcode{
+                    let imageName = "stickers/\(hexcode)"
+                    
+                    // Configure the cell
+                    if let stickerImage = UIImage(named: imageName){
+                        lastSharedEmojiName = hexcode
+                        showShareSheetWith(stickerImage, sourceView: self.view, sourceRect: sourceRect)
+                    }
                 }
-            }
-        }else{
-            StickersManager.shared.addRecentSticker(StickersManager.shared.filteredStickersArray[indexPath.row])
+            }else{
+                StickersManager.shared.addRecentSticker(StickersManager.shared.filteredStickersArray[indexPath.row])
 
-            if let hexcode = StickersManager.shared.filteredStickersArray[indexPath.row].hexcode{
-                let imageName = "stickers/\(hexcode)"
-                
-                // Configure the cell
-                if let stickerImage = UIImage(named: imageName){
-                    lastSharedEmojiName = hexcode
-                    showShareSheetWith(stickerImage)
+                if let hexcode = StickersManager.shared.filteredStickersArray[indexPath.row].hexcode{
+                    let imageName = "stickers/\(hexcode)"
+                    
+                    // Configure the cell
+                    if let stickerImage = UIImage(named: imageName){
+                        lastSharedEmojiName = hexcode
+                        showShareSheetWith(stickerImage, sourceView: self.view, sourceRect: sourceRect)
+                    }
                 }
             }
         }
         
+      
+        
     }
     var lastSharedEmojiName = ""
-    func showShareSheetWith(_ image: UIImage){
+    func showShareSheetWith(_ image: UIImage, sourceView: UIView, sourceRect: CGRect){
         // Set up activity view controller
         let imageToShare = [image]
         let viewOnWebActivity = ViewOnWebActivity()
@@ -406,7 +411,6 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         
         activityViewController.excludedActivityTypes = []
         
-        
         activityViewController.completionWithItemsHandler = {(activityType: UIActivity.ActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
             
             if activityType == UIActivity.ActivityType("org.openmoji.iOS-app.open-on-web-activity"){
@@ -414,6 +418,12 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
                 let safariViewController = SFSafariViewController(url: urlFromActivity)
                 self.present(safariViewController, animated: true, completion: nil)
             }
+        }
+        
+        // Configure presentation for iPads
+        if let popoverController = activityViewController.popoverPresentationController {
+            popoverController.sourceView = sourceView
+            popoverController.sourceRect = sourceRect
         }
         
         
