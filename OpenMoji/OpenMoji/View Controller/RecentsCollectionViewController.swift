@@ -22,7 +22,7 @@ class RecentsCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        self.title = "Recents"
+        self.title = "Recently Used"
         if let sourceSansFont = UIFont(name: "SourceSansPro-Bold", size: UIFont.labelFontSize){
             self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: sourceSansFont]
         }
@@ -78,7 +78,6 @@ class RecentsCollectionViewController: UICollectionViewController {
     
         if let hexcode = StickersManager.shared.getRecentStickers()[indexPath.row].hexcode{
             let imageName = "stickers/\(hexcode)"
-            //print(imageName)
             
             // Configure the cell
             if let stickerImage = UIImage(named: imageName){

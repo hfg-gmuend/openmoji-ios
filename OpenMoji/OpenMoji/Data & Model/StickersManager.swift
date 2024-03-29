@@ -12,6 +12,7 @@ class StickersManager {
     static let shared = StickersManager()
     private let userDefaults = UserDefaults.standard
     var stickersArray: [Sticker] = []
+    var filteredStickersArray: [Sticker] = []
     private let recentStickersKey = "recentStickers"
 
     private init() {} // Makes this a singleton class
@@ -25,6 +26,7 @@ class StickersManager {
                 let jsonFileData = try Data(contentsOf: jsonFilePath)
                 let stickers: [Sticker] = try decoder.decode([Sticker].self, from: jsonFileData)
                 stickersArray = stickers
+                filteredStickersArray = stickers
                 
                 if let colorFromUserDefaultsAsHex = userDefaults.string(forKey: "globalSkinToneColorHex"){
                     var isNotStandard = false
@@ -64,7 +66,7 @@ class StickersManager {
                         print("stickersArray.count before removing base versions is: \(stickersArray.count)")
                         
                         // Removes all yellow skin color emojis
-                        stickersArray.removeAll(where: {
+                        filteredStickersArray.removeAll(where: {
                             $0.hexcode == $0.skintoneBaseHexcode
                         })
                         
@@ -73,20 +75,20 @@ class StickersManager {
                         
                         // Gets rid of all other unwanted skin colors
                         for skinTone in skinToneModifiers{
-                            stickersArray.removeAll(where: {
+                            filteredStickersArray.removeAll(where: {
                                 $0.hexcode?.contains("-"+skinTone) == true
                             })
                         }
                     }else{
                         // Gets rid of all other unwanted skin colors
                         for skinTone in skinToneModifiers{
-                            stickersArray.removeAll(where: {
+                            filteredStickersArray.removeAll(where: {
                                 $0.hexcode?.contains("-"+skinTone) == true
                             })
                         }
                     }
                     
-                    stickersArray.removeAll(where: {
+                    filteredStickersArray.removeAll(where: {
                         $0.skintoneCombination?.contains("multiple") == true
                     })
                 }

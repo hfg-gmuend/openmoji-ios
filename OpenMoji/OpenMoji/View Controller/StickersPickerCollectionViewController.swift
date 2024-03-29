@@ -70,10 +70,8 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
                 chooseColorButton.setImage(buttonImage, for: .normal)
                 chooseColorButton.imageView?.contentMode = .scaleAspectFit // or .scaleAspectFill
                 
-//                chooseColorButton.translatesAutoresizingMaskIntoConstraints = false
-//                NSLayoutConstraint.activate([
-//                    chooseColorButton.widthAnchor.constraint(equalTo: chooseColorButton.heightAnchor)
-//                ])
+                chooseColorButton.widthAnchor.constraint(equalToConstant: 24).isActive = true
+                chooseColorButton.heightAnchor.constraint(equalTo: chooseColorButton.widthAnchor).isActive = true
             }
         }
     }
@@ -132,7 +130,6 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         }
     }
     
-    @IBOutlet var aboutBarButtonItem: UIBarButtonItem!
     func showCopiedView(imageName: String){
         let copiedViewFrame = CGRect(x: 0, y: 0, width: 200, height: 200)
         let copiedView = UIView(frame: copiedViewFrame)
@@ -262,8 +259,8 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         guard !filterText.isEmpty else {
             return [Sticker]()
         }
-
-        return StickersManager.shared.stickersArray.filter { sticker in
+        
+        let filtered = StickersManager.shared.filteredStickersArray.filter { sticker in
             // Use optional chaining and nil-coalescing to provide default values for optionals
             let annotationContains = sticker.annotation?.lowercased().contains(filterText.lowercased()) ?? false
             let hexcodeContains = sticker.hexcode?.lowercased().contains(filterText.lowercased()) ?? false
@@ -278,6 +275,8 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
             // Combine all conditions
             return annotationContains || hexcodeContains || emojiContains || groupContains || subgroupsContains || tagsContain || openmojiTagsContain
         }
+
+        return filtered
     }
 
 
@@ -297,7 +296,7 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
             print(filteredArray().count)
             return filteredArray().count
         }else{
-            return StickersManager.shared.stickersArray.count
+            return StickersManager.shared.filteredStickersArray.count
         }
     }
 
@@ -327,7 +326,7 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
                 cell.backgroundColor = UIColor.darkGray
             }
         }else{
-            if let hexcode = StickersManager.shared.stickersArray[indexPath.row].hexcode{
+            if let hexcode = StickersManager.shared.filteredStickersArray[indexPath.row].hexcode{
                 let imageName = "stickers/\(hexcode)"
                 //print(imageName)
                 
@@ -382,9 +381,9 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
                 }
             }
         }else{
-            StickersManager.shared.addRecentSticker(StickersManager.shared.stickersArray[indexPath.row])
+            StickersManager.shared.addRecentSticker(StickersManager.shared.filteredStickersArray[indexPath.row])
 
-            if let hexcode = StickersManager.shared.stickersArray[indexPath.row].hexcode{
+            if let hexcode = StickersManager.shared.filteredStickersArray[indexPath.row].hexcode{
                 let imageName = "stickers/\(hexcode)"
                 
                 // Configure the cell

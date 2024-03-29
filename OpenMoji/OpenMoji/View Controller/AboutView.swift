@@ -21,9 +21,6 @@ struct AboutView: View {
                     .font(.custom("SourceSansPro-Regular", size: 25))
                     .fontWeight(.bold)
                 
-                Text("Project Intent")
-                    .font(.custom("SourceSansPro-Regular", size: 20))
-                
                 Text("Emoji are indispensable for daily communication. They are practical, funny, and sometimes quite bizarre. For us, emoji are much more than colorful images decorating fun short messages. We think they are rather part of an important and exciting development: the return of pictorial symbols to written communication. For the first time in history, it is possible to communicate with a combination of letters and icons. Now it becomes feasible to say things and convey meanings that were previously impossible.\n\nUnfortunately, the creative variety of emoji has been rather limited so far. That is why we have developed OpenMoji as the first open source and independent emoji system to date. OpenMoji is an open-source project of 50+ students and 2 professors of HfG Schwäbisch Gmünd (Design University) and external contributors.")
                     .padding(.bottom)
                     .font(.custom("SourceSansPro-Regular", size: 17))
@@ -35,7 +32,7 @@ struct AboutView: View {
                     Button(action: {
                         showingSafariAboutView = true
                     }, label: {
-                        Text("OpenMoji.org")
+                        Text("Learn more")
                             .font(.custom("SourceSansPro-Regular", size: 18))
                             .foregroundColor(Color("actionBlue"))
                             
@@ -73,6 +70,7 @@ struct AboutView: View {
                 HStack {
                     Spacer()
                     Text("Built with")
+                        .font(.custom("SourceSansPro-Regular", size: 17))
                     
                     Image("stickers/2764", bundle: nil) // Replace "yourImageName" with your image name
                         .resizable()
@@ -80,6 +78,7 @@ struct AboutView: View {
                         .frame(width: 20)
                     
                     Text("in the open")
+                        .font(.custom("SourceSansPro-Regular", size: 17))
                     
                     Spacer()
                 }
