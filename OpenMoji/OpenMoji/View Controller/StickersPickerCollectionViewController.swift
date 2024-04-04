@@ -414,7 +414,7 @@ class StickersPickerCollectionViewController: UICollectionViewController, UIText
         activityViewController.completionWithItemsHandler = {(activityType: UIActivity.ActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
             
             if activityType == UIActivity.ActivityType("org.openmoji.iOS-app.open-on-web-activity"){
-                guard let urlFromActivity = URL(string: "https://openmoji.org/library/#emoji=" + self.lastSharedEmojiName) else {return}
+                guard let urlFromActivity = URL(string: "https://openmoji.org/library/emoji-" + self.lastSharedEmojiName) else {return}
                 let safariViewController = SFSafariViewController(url: urlFromActivity)
                 self.present(safariViewController, animated: true, completion: nil)
             }
